@@ -1,0 +1,500 @@
+html, body {
+	font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+	margin: 0;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+	font-weight: normal;
+}
+
+.elgg-page-header {
+	display: none;
+}
+
+.elgg-page-navbar {
+    background: #00acf7;
+	padding: 0;
+}
+.elgg-page-navbar > .elgg-inner {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: center;
+}
+.elgg-nav-logo {
+	left: 0;
+	flex-grow: 1;
+	order: 1;
+}
+
+@media screen and (min-width: 990px) {
+	.elgg-nav-logo {
+		flex-grow: 0;
+	}
+}
+
+.elgg-nav-logo a {
+    padding: 5px;
+	display: inline-block;
+}
+
+.elgg-nav-logo img {
+    height: 50px;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
+.elgg-nav-collapse {
+	height: auto;
+	width: 100%;
+	z-index: 1000;
+	flex-grow: 4;
+	order: 3;
+	display: none;
+}
+
+.elgg-nav-collapsed .elgg-nav-collapse {
+	display: block;
+}
+
+@media only screen and (min-width: 990px) {
+	.elgg-nav-collapse {
+		position: relative;
+		top: auto;
+		bottom: auto;
+		width: auto;
+		display: block;
+	}
+}
+
+.elgg-nav-button {
+	width: 20px;
+	height: 15px;
+	position: relative;
+	margin: 10px 20px;
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-moz-transition: ease-in-out 0.5s;
+	-o-transition: ease-in-out 0.5s;
+	-webkit-transition: ease-in-out 0.5s;
+	transition: ease-in-out 0.5s;
+	cursor: pointer;
+	display: block;
+	order: 2;
+	flex-grow: 0;
+}
+@media only screen and (min-width: 990px) {
+	.elgg-nav-button {
+		display: none;
+	}
+}
+
+.elgg-nav-button span {
+	display: block;
+	position: absolute;
+	height: 3px;
+	width: 100%;
+	background: #ffffff;
+	border-radius: 2px;
+	opacity: 1;
+	left: 0;
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-moz-transition: ease-in-out 0.25s;
+	-o-transition: ease-in-out 0.25s;
+	-webkit-transition: ease-in-out 0.25s;
+	transition: ease-in-out 0.25s;
+}
+
+.elgg-nav-button span:nth-child(1) {
+	top: 0px;
+}
+
+.elgg-nav-button span:nth-child(2) {
+	top: 6px;
+}
+
+.elgg-nav-button span:nth-child(3) {
+	top: 12px;
+}
+
+.elgg-nav-collapsed .elgg-nav-button span:nth-child(1) {
+	top: 6px;
+	-moz-transform: rotate(135deg);
+	-ms-transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+
+.elgg-nav-collapsed .elgg-nav-button span:nth-child(2) {
+	opacity: 0;
+	left: -60px;
+}
+
+.elgg-nav-collapsed .elgg-nav-button span:nth-child(3) {
+	top: 6px;
+	-moz-transform: rotate(-135deg);
+	-ms-transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+}
+
+.elgg-menu-site {
+	font-family: inherit;
+	float: none;
+}
+
+.elgg-menu-site > li {
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	float: none;
+	display: block;
+}
+
+@media screen and (min-width: 990px) {
+	.elgg-menu-site > li {
+		border-top: none;
+		display: inline-block;
+	}
+}
+
+.elgg-menu-site > li a {
+	font-size: 17px;
+	line-height: 40px;
+	padding: 10px 15px;
+	vertical-align: middle;
+	color: #fff;
+}
+
+.elgg-menu-site > li > ul {
+    background: none;
+    border-radius: 0;
+	border-width: 1px 1px 0;
+	border-style: solid;
+	border-color: rgba(255, 255, 255, 0.2);
+	position: relative;
+	display: block;
+	width: 100%;
+	box-shadow: none;
+	top: 0;
+}
+
+.elgg-menu-site > li ul a {
+    padding: 10px 35px;
+    line-height: 22px;
+}
+
+@media screen and (min-width: 990px) {
+	.elgg-menu-site > li > ul {
+		display: none;
+		border-width: 1px;
+		width: 200px;
+	}
+	.elgg-menu-site > li:hover > ul {
+		display: block;
+		position: absolute;
+		top: 60px;
+		background: #00acf7;
+	}
+
+	.elgg-menu-site > li ul a {
+		padding: 10px 20px;
+	}
+}
+
+.elgg-menu-site .elgg-state-selected a,
+.elgg-menu-site li:hover a {
+	background: inherit;
+}
+
+.elgg-menu-site .elgg-state-selected > a,
+.elgg-menu-site li:hover > a {
+	background-color: #60b8f7;
+    color: #FFF;
+	text-decoration: none;
+}
+
+.elgg-menu-site > li ul li:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.elgg-page-landing .elgg-page-body > .elgg-inner {
+    max-width: none;
+}
+
+.elgg-page-landing .elgg-hero {
+    background-image: url(https://c1.staticflickr.com/5/4137/4872337200_e503c620f0_b.jpg);
+    background-repeat: no-repeat;
+    height: 45vh;
+    background-origin: border-box;
+    position: relative;
+    background-size: 2000px;
+    text-align: right;
+}
+
+.elgg-hero-github {
+	display:  none;
+	position: absolute;
+	left: 0;
+}
+
+@media screen and (min-width: 990px) {
+	.elgg-hero-github {
+		display: block;
+	}
+}
+
+
+.elgg-page-landing .elgg-page-body {
+    padding: 0;
+}
+
+.elgg-page-landing .elgg-hero h1 {
+    font-size: 5vh;
+    color: white;
+    font-weight: normal;
+    position: absolute;
+    right: 5vw;
+    bottom: 19vh;
+    text-shadow: -1px 3px #000;
+    line-height: normal;
+	max-width: 700px;
+}
+
+.elgg-page-landing .elgg-hero h2 {
+    position: absolute;
+    right: 5vw;
+    bottom: 12vh;
+    color: #ccc;
+    text-shadow: -1px 2px #000;
+    line-height: normal;
+    font-size: 2.2vh;
+	max-width: 500px;
+}
+
+.elgg-page-landing .elgg-hero-calls {
+	position: absolute;
+    bottom: 4vh;
+    right: 5vw;
+}
+
+.elgg-page-landing .elgg-hero-call {
+    color: #fff;
+    background: #00acf7;
+    font-size: 2vh;
+    line-height: normal;
+    padding: 10px;
+    border-radius: 7px;
+    font-family: 'Roboto';
+	transition: background 1s ease-in-out;
+}
+
+.elgg-page-landing .elgg-hero-call:not(:last-child) {
+	margin-right: 10px;
+}
+
+.elgg-page-landing .elgg-hero-call:hover {
+	background: #000;
+	text-decoration: none;
+}
+
+.elgg-page-footer {
+    border-top: 1px solid #000;
+    background: #424242;
+}
+
+.elgg-page .elgg-page-footer > .elgg-inner {
+    padding: 25px;
+    border: none;
+    color: #999 !important;
+}
+
+.elgg-page .elgg-page-footer > .elgg-inner h2 {
+    color: #999;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.elgg-page .elgg-page-footer > .elgg-inner .elgg-module {
+    margin: 21px;
+}
+
+.elgg-page .elgg-page-footer > .elgg-inner .elgg-menu a {
+    color: #999;
+}
+
+.elgg-page .elgg-page-footer > .elgg-inner .elgg-menu-footer {
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.elgg-page .elgg-page-footer:after {
+	content: "";
+}
+
+.elgg-layout {
+	min-height: calc(100vh - 400px);
+}
+
+.elgg-landing-about {
+    font-size: 18px;
+    background: rgba(241, 241, 241, 0.44);
+    line-height: normal;
+}
+
+.elgg-landing-about .elgg-inner {
+	max-width: 980px;
+    margin: 0 auto;
+}
+
+.elgg-landing-about .elgg-tagline {
+	padding: 25px;
+}
+
+.elgg-landing-about .elgg-tagline > .elgg-image-alt {
+	float: none;
+	margin: 15px auto;
+	text-align: center;
+}
+
+@media screen and (min-width: 990px) {
+	.elgg-landing-about .elgg-tagline {
+		padding: 50px 0;
+	}
+
+	.elgg-landing-about .elgg-tagline > .elgg-image-alt {
+		float: right;
+		margin: 0 0 15px 15px;
+	}
+}
+
+.elgg-page-landing .elgg-hero-call:hover {
+    text-decoration: none;
+    background: #000;
+}
+
+.elgg-landing-modules {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 15px;
+}
+
+@media screen and (min-width: 990px) {
+	.elgg-landing-modules {
+		padding: 0;
+	}
+	.elgg-landing-modules > div {
+		flex-basis: 48%;
+	}
+}
+
+.elgg-module-landing .elgg-head {
+    padding: 10px 15px;
+    border-bottom: 1px solid #dcdcdc;
+    background: #00acf7;
+	border-radius: 6px;
+}
+
+.elgg-module-landing .elgg-table-alt {
+	margin: 10px auto;
+	table-layout: fixed;
+}
+
+.elgg-module-landing .elgg-table-alt td,
+.elgg-module-landing .elgg-table-alt th {
+	padding: 8px;
+}
+
+.elgg-module-landing .elgg-subtext {
+    font-style: normal;
+}
+
+.elgg-module-landing .elgg-body h3 {
+    font-size: 25px;
+	margin-bottom: 5px;
+    line-height: normal;
+}
+
+.elgg-module-landing .elgg-output {
+	padding: 15px 0;
+	font-size: 16px;
+}
+
+.elgg-module-landing .elgg-output p {
+	margin: 0;
+}
+
+.elgg-module-landing .elgg-output p + p{
+	margin-top: 10px;
+}
+
+.elgg-module-landing ul > li {
+    padding: 15px 20px;
+}
+
+.elgg-module-landing ul > li svg {
+    max-width: 75px;
+    max-height: 75px;
+	-webkit-filter: grayscale(0.8);
+	-webkit-filter: grayscale(80%);
+	filter: gray;
+	filter: grayscale(80%);
+}
+.elgg-module-landing ul > li:hover svg {
+	-webkit-filter: none;
+	filter: none;
+	filter: none;
+}
+
+.elgg-module-landing ul > li .elgg-image-block {
+    display: flex;
+    align-items: center;
+}
+.elgg-module-landing ul > li .elgg-image-block > .elgg-image {
+    margin-right:20px
+}
+
+.elgg-module-landing .elgg-head h3 {
+    color: #fff;
+	font-size: 20px;
+	margin: 0;
+	line-height: normal;
+}
+
+.elgg-menu-topbar {
+	font-family: inherit;
+}
+
+.elgg-about-award {
+	padding: 10px;
+	border: 1px solid #dcdcdc;
+	margin: 0 0 10px 10px;
+	background: #f1f1f1;
+	float: right;
+	text-align: center;
+	max-width: 110px;
+}
+
+.elgg-about-features {
+	border-top: 1px solid #dcdcdc;
+}
+
+.elgg-about-features > li {
+    padding: 15px;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.elgg-button-landing {
+    background: #e74815;
+    color: #fff;
+    border: none;
+    font-family: inherit;
+    font-size: 24px;
+    line-height: normal;
+}

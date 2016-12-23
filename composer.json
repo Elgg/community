@@ -1,0 +1,22 @@
+{
+    "name": "elgg/community",
+    "description": "Static pages for Elgg community",
+    "type": "elgg-plugin",
+    "keywords": [
+        "elgg",
+        "plugin",
+        "Enhancements"
+    ],
+    "homepage": "https://github.com/Elgg/community",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Core developers",
+            "homepage": "https://github.com/Elgg/community",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "composer/installers": ">=1.0.8"
+    }
+}

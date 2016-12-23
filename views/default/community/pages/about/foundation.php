@@ -1,0 +1,1 @@
+<p>Elgg is managed by the Elgg Foundation, a nonprofit organization that was founded to govern, protect, and promote the Elgg open source social network engine. The Foundation aims to provide a stable, commercially and individually independent organization that operates in the best interest of Elgg as an open source project.</p>
