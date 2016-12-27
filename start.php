@@ -271,7 +271,11 @@ elgg_register_event_handler('init', 'system', function() {
 	// Only admins can post blogs
 	elgg_register_plugin_hook_handler('container_permissions_check', 'object', function($hook, $type, $return, $params) {
 		if ($params['subtype'] == 'blog') {
-			return $params['user']->isAdmin();
+			if ($params['user'] instanceof ElggUser) {
+				return $params['user']->isAdmin();
+			}
+			
+			return false;
 		}
 	});
 
