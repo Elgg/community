@@ -45,30 +45,6 @@ function community_init() {
  */
 function community_setup_site_menu($hook, $type, $return, $params) {
 
-	$priorities = [
-		'blog' => false,
-		'bookmarks' => false,
-		'members' => false,
-		'pages' => false,
-		'themes' => false,
-		'plugins' => 400,
-		'showcase' => 300,
-		'groups' => 600,
-	];
-
-	foreach ($return as $key => &$item) {
-		$name = $item->getName();
-		$priority = elgg_extract($name, $priorities);
-		if ($priority === false) {
-			unset($return[$key]);
-			continue;
-		} else if ($priority) {
-			$item->setPriority($priority);
-		} else {
-			$item->setParentName('community');
-		}
-	}
-
 	$return[] = ElggMenuItem::factory([
 				'name' => 'about',
 				'text' => 'About',
@@ -96,8 +72,32 @@ function community_setup_site_menu($hook, $type, $return, $params) {
 				'priority' => 300,
 	]);
 
-	if (!elgg_is_logged_in()) {
+	$priorities = [
+		'blog' => false,
+		'bookmarks' => false,
+		'members' => false,
+		'pages' => false,
+		'themes' => false,
+		'plugins' => 400,
+		'showcase' => 300,
+		'groups' => 600,
+	];
 
+	foreach ($return as $key => $item) {
+		$name = $item->getName();
+		$priority = elgg_extract($name, $priorities);
+		if ($priority === false) {
+			unset($return[$key]);
+			continue;
+		} else if ($priority) {
+			$item->setPriority($priority);
+		} else {
+			$item->setParentName('community');
+		}
+		$return[] = $item;
+	}
+
+	if (!elgg_is_logged_in()) {
 		if (elgg_is_active_plugin('registration_randomizer')) {
 			$info = registration_randomizer_generate_token();
 			$registration_url = 'register/' . $info['ts'] . '/' . $info['token'];
