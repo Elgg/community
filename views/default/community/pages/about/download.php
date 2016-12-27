@@ -17,7 +17,8 @@ reset($lts_releases);
 list($lts_version, $lts_date) = each($lts_releases);
 ?>
 <div class="elgg-box elgg-state-notice">
-	The simplest way to install and maintain your Elgg project is via Composer. Please check our <a href="http://learn.elgg.org/en/stable/intro/install.html">Installation</a> docs for instrutions.
+	The simplest way to install and maintain your Elgg project is via Composer. 
+	Please check our <b><a href="http://learn.elgg.org/en/stable/intro/install.html" tartet="_blank">Installation</a></b> docs for instrutions.
 </div>
 
 <?php
@@ -86,13 +87,14 @@ echo elgg_view_module('info', "LTS Release - $lts_date", $content, [
 				<h3>Hosting</h3>
 			</div>
 			<div class="elgg-body">
-				<p>If you are looking for somewhere to host your Elgg powered network, we are putting together a <a href="hosting.php" class="accent_color">list of providers</a> who have added Elgg hosting to their services.</p>
-				<p><a href="https://partners.a2hosting.com/solutions.php?id=1686&url=443">
-						<img src="<?= elgg_get_simplecache_url('images/a2hosting_mini_banner.gif') ?>" border="0" alt="A2 graphic" /></a></p>
-				<p><a href="http://www.arckcloud.com/elgg-hosting/">
+				<p>If you are looking for somewhere to host your Elgg powered network, we are putting together
+					a <a href="hosting.php" class="accent_color">list of providers</a> who have added Elgg hosting to their services.</p>
+				<p><a href="https://partners.a2hosting.com/solutions.php?id=1686&url=443" target="_blank">
+						<img src="<?= elgg_get_simplecache_url('images/a2hosting_mini_banner.gif') ?>" border="0" alt="A2 Hosting" /></a></p>
+				<p><a href="http://www.arckcloud.com/elgg-hosting/" target="_blank">
 						<img src="<?= elgg_get_simplecache_url('images/arckcloud-small-banner.png') ?>" border="0" alt="Arckcloud Hosting" /></a></p>
 				<p><a href="http://arvixe.evyy.net/c/303140/196991/3370" target="_blank">
-						<img border="0" src="https://affiliates.arvixe.com/banners/266x46.Elgg.gif" width="266" height="46" alt="Arvixe Hosting"></a></p>
+						<img border="0" src="https://affiliates.arvixe.com/banners/266x46.Elgg.gif" alt="Arvixe Hosting"></a></p>
 			</div>
 		</div>
 	</div>

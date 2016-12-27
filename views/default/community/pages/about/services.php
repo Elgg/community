@@ -28,8 +28,8 @@ shuffle($services);
 			<?php
 			?>
 			<li class="elgg-item">
-				<div class="elgg-image-block">
-					<div class="elgg-image">
+				<div class="clearfix">
+					<div class="elgg-body">
 						<?=
 						elgg_view('output/url', [
 							'href' => $service['url'],
@@ -37,11 +37,12 @@ shuffle($services);
 								'src' => elgg_get_simplecache_url("images/tn_logo.png"),
 								'alt' => 'Thematic Networks',
 							]),
+							'target' => '_blank',
+							'class' => 'float-alt pam',
+							'img_class' => 'elgg-photo',
 						]);
 						?>
-					</div>
-					<div class="elgg-body">
-						<a href="http://thematic.net">Thematic Networks</a> creates socially-enabled web platforms with enterprise tools that help businesses to engage with their communities and generate revenue from published digital content. Our solutions power all sorts of applications, ranging from Software-as-a-Service networks to customized enterprise social networks, corporate e-learning platforms and social marketplaces with App Stores.
+						<a href="http://thematic.net" target="_blank">Thematic Networks</a> creates socially-enabled web platforms with enterprise tools that help businesses to engage with their communities and generate revenue from published digital content. Our solutions power all sorts of applications, ranging from Software-as-a-Service networks to customized enterprise social networks, corporate e-learning platforms and social marketplaces with App Stores.
 						<br />
 						Thematic Networks is a founding member and proud supporter of the Elgg Foundation.
 						<br /><br />

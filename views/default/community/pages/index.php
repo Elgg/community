@@ -18,7 +18,7 @@ list($stable_version, $stable_date) = each($stables);
 	<div class="elgg-hero-calls">
 		<?php
 		echo elgg_view('output/url', [
-			'href' => 'download',
+			'href' => 'about/download',
 			'text' => "Get Elgg $stable_version",
 			'class' => 'elgg-hero-call',
 		]);
@@ -27,6 +27,7 @@ list($stable_version, $stable_date) = each($stables);
 			'href' => 'http://learn.elgg.org',
 			'text' => "Learn More",
 			'class' => 'elgg-hero-call',
+			'target' => '_blank',
 		]);
 		?>
 	</div>
@@ -38,6 +39,7 @@ list($stable_version, $stable_date) = each($stables);
 		]),
 		'href' => 'https://github.com/elgg/elgg',
 		'class' => 'elgg-hero-github',
+		'target' => '_blank',
 	]);
 	?>
 </div>

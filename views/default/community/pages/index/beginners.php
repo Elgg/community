@@ -17,6 +17,7 @@
 							echo elgg_view('output/url', [
 								'href' => 'http://learn.elgg.org/en/stable/intro/install.html',
 								'text' => 'Install',
+								'target' => '_blank',
 							]);
 							?>
 						</h3>
@@ -82,8 +83,9 @@
 						<h3>
 							<?php
 							echo elgg_view('output/url', [
-								'href' => 'hhttp://learn.elgg.org/en/stable/tutorials/index.html',
+								'href' => 'http://learn.elgg.org/en/stable/tutorials/index.html',
 								'text' => 'Hello, World!',
+								'target' => '_blank',
 							]);
 							?>
 						</h3>
@@ -105,7 +107,7 @@
 						<h3>
 							<?php
 							echo elgg_view('output/url', [
-								'href' => 'https://elgg.org/groups/profile/834462/beginning-developers',
+								'href' => 'groups/profile/834462/beginning-developers',
 								'text' => 'Beginning Developers Group',
 							]);
 							?>

@@ -3,7 +3,7 @@
  * Register help
  *
  */
-$title = elgg_echo("community_:title:register");
+$title = elgg_echo("comminity:title:register");
 
 ob_start();
 ?>

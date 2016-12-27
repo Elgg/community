@@ -227,7 +227,7 @@ h1, h2, h3, h4 {
 }
 
 .elgg-page-landing .elgg-hero {
-    background-image: url(https://c1.staticflickr.com/5/4137/4872337200_e503c620f0_b.jpg);
+    background-image: url(images/cover.jpg);
     background-repeat: no-repeat;
     height: 45vh;
     background-origin: border-box;

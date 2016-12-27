@@ -28,8 +28,6 @@ function community_init() {
 
 	elgg_register_plugin_hook_handler('action', 'login', 'community_login_action');
 
-	community_combine_js();
-
 	elgg_register_page_handler('about', 'community_about_page_handler');
 	elgg_register_plugin_hook_handler('register', 'menu:page', 'community_setup_page_menu');
 
@@ -98,20 +96,51 @@ function community_setup_site_menu($hook, $type, $return, $params) {
 				'priority' => 300,
 	]);
 
-	$groups = elgg_get_entities_from_metadata([
-		'types' => 'group',
-		'metadata_name_values_pairs' => [
-			'featured_group' => 'yes',
-		],
-		'limit' => 0,
-		'batch' => true,
-	]);
+	if (!elgg_is_logged_in()) {
 
-	foreach ($groups as $group) {
+		if (elgg_is_active_plugin('registration_randomizer')) {
+			$info = registration_randomizer_generate_token();
+			$registration_url = 'register/' . $info['ts'] . '/' . $info['token'];
+		} else {
+			$registration_url = 'register';
+		}
+
 		$return[] = ElggMenuItem::factory([
-					'name' => "forums:$group->guid",
-					'text' => $group->getDisplayName(),
-					'href' => $group->getDisplayName(),
+					'name' => 'login',
+					'text' => 'Login',
+					'href' => 'login',
+					'priority' => 1,
+					'parent_name' => 'community',
+		]);
+
+		$return[] = ElggMenuItem::factory([
+					'name' => 'register',
+					'text' => 'Register',
+					'href' => $registration_url,
+					'priority' => 2,
+					'parent_name' => 'community',
+		]);
+	}
+
+	$groups = [
+		1161181 => 'Performance & Scalability',
+		834462 => 'Beginning Developers',
+		211069 => 'Feedback & Planning',
+		179063 => 'Technical Support',
+		75603 => 'Professional Services',
+		11 => 'Theme Development',
+		7 => 'Plugin Development',
+		15815 => 'General Discussions',
+	];
+
+	asort($groups);
+
+	foreach ($groups as $guid => $group) {
+		$return[] = ElggMenuItem::factory([
+					'name' => "groups:$guid",
+					'text' => $group,
+					'href' => "groups/profile/$guid",
+					'parent_name' => 'groups',
 		]);
 	}
 
@@ -182,32 +211,6 @@ function community_login_action() {
 	}
 }
 
-function community_combine_js() {
-	elgg_unregister_js('jquery');
-	elgg_extend_view('elgg.js', 'jquery.js', 1);
-	elgg_extend_view('elgg.js', 'separator.js', 1);
-
-	elgg_unregister_js('jquery-ui');
-	elgg_extend_view('elgg.js', 'jquery-ui.js', 1);
-	elgg_extend_view('elgg.js', 'separator.js', 1);
-
-	elgg_unregister_js('elgg.require_config');
-	elgg_extend_view('elgg.js', 'elgg/require_config.js', 1);
-	elgg_extend_view('elgg.js', 'separator.js', 1);
-
-	elgg_unregister_js('require');
-	elgg_extend_view('elgg.js', 'require.js', 1);
-	elgg_extend_view('elgg.js', 'separator.js', 1);
-
-	elgg_extend_view('elgg.js', 'separator.js');
-	elgg_unregister_js('lightbox');
-	elgg_extend_view('elgg.js', 'lightbox.js');
-
-	elgg_extend_view('elgg.js', 'separator.js');
-	elgg_unregister_js('elgg.ui.river');
-	elgg_extend_view('elgg.js', 'elgg/ui.river.js');
-}
-
 function community_forward($h, $t, $v, $p) {
 	// odds are we want the Community URL instead of the home page
 	$site = elgg_get_site_url();
@@ -239,13 +242,13 @@ function community_pagesetup() {
 
 	// footer navigation
 	$items = array(
-		'home' => array(elgg_echo('community_:home'), 'elgg.org'),
-		'community' => array(elgg_echo('community_:community'), 'elgg.org/activity'),
-		'blog' => array(elgg_echo('community_:blog'), 'blog.elgg.org'),
-		'hosting' => array(elgg_echo('community_:hosting'), 'elgg.org/hosting'),
-		'services' => array(elgg_echo('community_:services'), 'elgg.org/vendors'),
-		'docs' => array(elgg_echo('community_:learn'), 'learn.elgg.org/'),
-		'download' => array(elgg_echo('community_:download'), 'elgg.org/download'),
+		'home' => array(elgg_echo('comminity:home'), 'elgg.org'),
+		'community' => array(elgg_echo('comminity:community'), 'elgg.org/activity'),
+		'blog' => array(elgg_echo('comminity:blog'), 'blog.elgg.org'),
+		'hosting' => array(elgg_echo('comminity:hosting'), 'elgg.org/about/hosting'),
+		'services' => array(elgg_echo('comminity:services'), 'elgg.org/about/services'),
+		'docs' => array(elgg_echo('comminity:learn'), 'learn.elgg.org/'),
+		'download' => array(elgg_echo('comminity:download'), 'elgg.org/about/download'),
 	);
 
 	foreach ($items as $id => $info) {
@@ -256,8 +259,8 @@ function community_pagesetup() {
 
 	elgg_register_menu_item('footer', array(
 		'name' => 'policy',
-		'href' => "http://elgg.org/domain.php",
-		'text' => elgg_echo('community_:policy'),
+		'href' => "http://elgg.org/about/domain_policy",
+		'text' => elgg_echo('comminity:policy'),
 		'section' => 'default',
 	));
 }
@@ -412,6 +415,7 @@ function community_handle_legacy_pages($hook, $type, $return, $params) {
 	}
 
 	$identifier = elgg_extract('identifier', $params);
+	$segments = elgg_extract('segments', $params);
 
 	switch ($identifier) {
 		case 'about.php' :

@@ -8,6 +8,6 @@ echo elgg_view('object/elements/summary', [
 	'icon' => $icon,
 	'entity' => $entity,
 	'content' => elgg_view('output/longtext', [
-		'value' => $entity->description,
+		'value' => $entity->briefdescription,
 	]),
 ]);

@@ -59,7 +59,7 @@
 						<h3>
 							<?php
 							echo elgg_view('output/url', [
-								'href' => 'https://elgg.org/groups/profile/75603/professional-services',
+								'href' => 'groups/profile/75603/professional-services',
 								'text' => 'Professional Services Group',
 							]);
 							?>

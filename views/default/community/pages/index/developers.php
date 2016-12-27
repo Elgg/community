@@ -15,8 +15,9 @@
 						<h3>
 							<?php
 							echo elgg_view('output/url', [
-								'href' => 'https://learn.elgg.org/',
+								'href' => 'http://learn.elgg.org/',
 								'text' => 'Documentation',
+								'target' => '_blank',
 							]);
 							?>
 						</h3>
@@ -39,6 +40,7 @@
 							echo elgg_view('output/url', [
 								'href' => 'http://reference.elgg.org/2.x/annotated.html',
 								'text' => 'API Reference',
+								'target' => '_blank',
 							]);
 							?>
 						</h3>
@@ -61,6 +63,7 @@
 							echo elgg_view('output/url', [
 								'href' => 'https://github.com/elgg/elgg',
 								'text' => 'Source Code',
+								'target' => '_blank',
 							]);
 							?>
 						</h3>
@@ -83,6 +86,7 @@
 							echo elgg_view('output/url', [
 								'href' => 'https://github.com/elgg/elgg/issues',
 								'text' => 'Bug Tracker',
+								'target' => '_blank',
 							]);
 							?>
 						</h3>
@@ -104,7 +108,7 @@
 						<h3>
 							<?php
 							echo elgg_view('output/url', [
-								'href' => 'https://elgg.org/groups/profile/211069/feedback-and-planning',
+								'href' => 'groups/profile/211069/feedback-and-planning',
 								'text' => 'Feedback & Planning',
 							]);
 							?>

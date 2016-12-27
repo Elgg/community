@@ -37,8 +37,9 @@
 						<h3>
 							<?php
 							echo elgg_view('output/url', [
-								'href' => 'about/contributing',
+								'href' => 'http://learn.elgg.org/en/stable/contribute/index.html',
 								'text' => 'Contribute',
+								'target' => '_blank',
 							]);
 							?>
 						</h3>
@@ -58,8 +59,14 @@
 					<div class="elgg-body">
 						<h3>
 							<?php
+							if (elgg_is_active_plugin('registration_randomizer')) {
+								$info = registration_randomizer_generate_token();
+								$registration_url = 'register/' . $info['ts'] . '/' . $info['token'];
+							} else {
+								$registration_url = 'register';
+							}
 							echo elgg_view('output/url', [
-								'href' => 'register',
+								'href' => $registration_url,
 								'text' => 'Join Our Community',
 							]);
 							?>
