@@ -90,7 +90,6 @@ function community_setup_site_menu($hook, $type, $return, $params) {
 		$name = $item->getName();
 		$priority = elgg_extract($name, $priorities);
 		if ($priority === false) {
-			unset($return[$key]);
 			continue;
 		} else if ($priority) {
 			$item->setPriority($priority);
