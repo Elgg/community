@@ -45,6 +45,9 @@ function community_init() {
  */
 function community_setup_site_menu($hook, $type, $return, $params) {
 
+	$original_items = $return;
+
+	$return = [];
 	$return[] = ElggMenuItem::factory([
 				'name' => 'about',
 				'text' => 'About',
@@ -83,7 +86,7 @@ function community_setup_site_menu($hook, $type, $return, $params) {
 		'groups' => 600,
 	];
 
-	foreach ($return as $key => $item) {
+	foreach ($original_items as $key => $item) {
 		$name = $item->getName();
 		$priority = elgg_extract($name, $priorities);
 		if ($priority === false) {
@@ -94,7 +97,7 @@ function community_setup_site_menu($hook, $type, $return, $params) {
 		} else {
 			$item->setParentName('community');
 		}
-		$return[$key] = $item;
+		$return[] = $item;
 	}
 
 	if (!elgg_is_logged_in()) {
