@@ -94,7 +94,7 @@ function community_setup_site_menu($hook, $type, $return, $params) {
 		} else {
 			$item->setParentName('community');
 		}
-		$return[] = $item;
+		$return[$key] = $item;
 	}
 
 	if (!elgg_is_logged_in()) {
