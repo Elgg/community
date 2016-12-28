@@ -19,7 +19,7 @@ $services = array(
 shuffle($services);
 ?>
 
-<div class="elgg-module elgg-module-landing">
+<div class="elgg-module elgg-module-info">
 	<div class="elgg-head">
 		<h3>Elgg Services</h3>
 	</div>
@@ -54,7 +54,7 @@ shuffle($services);
 	</div>
 </div>
 
-<div class="elgg-module elgg-module-landing">
+<div class="elgg-module elgg-module-info">
 	<div class="elgg-head">
 		<h3>Listings</h3>
 	</div>

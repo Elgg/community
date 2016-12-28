@@ -45,12 +45,38 @@ h1, h2, h3, h4 {
     line-height: 50px;
 }
 
+#login-dropdown {
+    order: 2;
+    position: static;
+    top: auto;
+    right: auto;
+}
+
+@media only screen and (min-width: 990px) {
+	#login-dropdown {
+		order: 5;
+	}
+}
+
+#login-dropdown a {
+    font-size: 17px;
+    line-height: 40px;
+    padding: 10px 15px;
+    vertical-align: middle;
+    color: #fff;
+}
+
+#login-dropdown-box {
+    border-top: 0;
+}
+
+
 .elgg-nav-collapse {
 	height: auto;
 	width: 100%;
 	z-index: 1000;
 	flex-grow: 4;
-	order: 3;
+	order: 4;
 	display: none;
 }
 
@@ -83,7 +109,7 @@ h1, h2, h3, h4 {
 	transition: ease-in-out 0.5s;
 	cursor: pointer;
 	display: block;
-	order: 2;
+	order: 3;
 	flex-grow: 0;
 }
 @media only screen and (min-width: 990px) {
@@ -490,11 +516,137 @@ h1, h2, h3, h4 {
     border-bottom: 1px solid #dcdcdc;
 }
 
-.elgg-button-landing {
-    background: #e74815;
+/** TYPOGRAPHY **/
+a {
+	color: #006D9C;
+}
+.elgg-subtext, .elgg-text-help {
+	font-style: normal;
+	color: #666;
+	float: none !important;
+	font-size: 90%;
+}
+.elgg-tags .elgg-icon {
+    font-size: 11px;
+}
+.elgg-button {
+	box-shadow: none;
+	border: none;
+	font-family: inherit;
+	transition: all 0.5s ease-in-out;
+}
+.elgg-button,
+.elgg-button-action,
+.elgg-button-delete,
+.elgg-button-cancel {
+	background-color: #eee;
+	color: #333;
+}
+
+.elgg-button-action:hover,
+.elgg-button-action:focus {
+	background-color: #00acf7;
+	color: #fff;
+}
+.elgg-button-delete:hover,
+.elgg-button-delete:focus {
+	background-color: #f30;
+	color: #fff;
+}
+.elgg-button-cancel:hover,
+.elgg-button-cancel:focus {
+	background-color: #aaaaaa;
+	color: #fff;
+}
+.elgg-button-submit {
+	background-color: #00acf7;
+	color: #fff;
+}
+.elgg-button-submit:hover,
+.elgg-button-submit:focus  {
+    background: #005C84;
     color: #fff;
-    border: none;
-    font-family: inherit;
-    font-size: 24px;
-    line-height: normal;
+}
+
+.elgg-menu-longtext {
+	margin-top: -25px;
+}
+.elgg-menu-longtext > li + li {
+	margin-left: 10px;
+}
+.elgg-menu-longtext > li > a {
+	font-size: 12px;
+}
+
+.elgg-box.elgg-state-notice,
+blockquote {
+    color: #666;
+    background-color: rgba(0, 172, 247, 0.05);
+    border: 1px solid rgba(0, 172, 247, 0.15);
+    border-radius: 0;
+}
+.elgg-box-error {
+    background-color: rgba(248, 232, 232, 0.32);
+    border: 1px solid rgba(229, 183, 181, 0.63);
+    border-radius: 0;
+}
+
+
+.elgg-table,
+.elgg-table-alt,
+.theme-sandbox-table {
+  width: 100%;
+  border-top: 1px solid #dcdcdc;
+  table-layout: fixed;
+}
+.elgg-table td, .elgg-table th,
+.elgg-table-alt td,
+.elgg-table-alt th,
+.theme-sandbox-table td,
+.theme-sandbox-table th {
+  padding: 5px 10px;
+  border-bottom: 1px solid #dcdcdc;
+}
+.elgg-table th,
+.elgg-table-alt th,
+.theme-sandbox-table th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+.elgg-table tr:hover,
+.elgg-table-alt tr:hover,
+.theme-sandbox-table tr:hover {
+  background: #f4f4f4;
+}
+
+.elgg-table-alt td:first-child {
+  width: 200px;
+}
+
+.elgg-menu-entity {
+    float: none;
+    margin: 0;
+    color: inherit;
+    font-size: 90%;
+}
+
+.elgg-menu-entity > li {
+    margin: 0 10px 0 0;
+}
+
+.elgg-menu-entity > li > a {
+	color: inherit;
+}
+
+.elgg-menu-entity > li .elgg-icon {
+    font-size: inherit;
+	color: inherit;
+}
+
+.elgg-listing-full-header {
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 10px;
+    margin-top: -10px;
+    padding: 10px;
 }

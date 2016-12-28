@@ -13,6 +13,8 @@ elgg_require_js('page/elements/navbar');
 	?>
 </div>
 
+<?= elgg_view('core/account/login_dropdown') ?>
+
 <div class="elgg-nav-button">
 	<span></span>
 	<span></span>
