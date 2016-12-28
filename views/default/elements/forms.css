@@ -1,0 +1,960 @@
+input,
+textarea,
+select,
+option,
+optgroup,
+button,
+legend,
+fieldset {
+  box-sizing: border-box;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 20px;
+  color: #666;
+  vertical-align: top;
+  display: block;
+  margin: 5px 0 5px;
+}
+
+datalist {
+  font-family: inherit;
+  font-size: 14px;
+}
+
+label {
+  display: block;
+  margin: 5px 0 5px;
+  font-weight: bold;
+  color: #666;
+}
+
+label + br {
+  display: none;
+  visibility: hidden;
+  height: 0;
+}
+
+/* Input & Textarea ------------------ */
+/* Fields with standard width */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="number"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input[list],
+input[type="file"],
+select,
+textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 7px;
+  background-color: #ffffff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #dcdcdc;
+}
+
+/* Fields with standard height */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="number"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input[list] {
+  height: 36px;
+  -webkit-appearance: none;
+}
+
+input:-webkit-autofill {
+  -moz-box-shadow: 0 0 0 1000px #fff inset;
+  -webkit-box-shadow: 0 0 0 1000px #fff inset;
+  box-shadow: 0 0 0 1000px #fff inset;
+}
+
+/* Other */
+textarea {
+  -webkit-appearance: none;
+  overflow: auto;
+}
+
+input[type="range"] {
+  height: 36px;
+  width: 100%;
+  max-width: 100%;
+}
+
+input[type="file"] {
+  min-height: 36px;
+}
+
+input[type="search"] {
+  height: 36px;
+  -webkit-appearance: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 5px 0 0;
+}
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Select ------------------ */
+select {
+  height: 36px;
+}
+
+select[multiple] {
+  height: auto;
+  min-height: 36px;
+  padding: 0;
+}
+select[multiple] option {
+  margin: 0;
+  padding: 7.2px;
+}
+
+/* Fieldset ------------------ */
+fieldset {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+legend {
+  padding: 0;
+  font-weight: inherit;
+}
+
+/* Buttons, Input Type Submit/Reset ------------------ */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="image"] {
+  height: 36px;
+  width: auto;
+  max-width: 300px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  margin: 0;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+input[type="image"] {
+  text-align: center;
+  padding: 7.2px;
+}
+
+/* States ------------------ */
+input[disabled],
+textarea[disabled],
+select[disabled],
+option[disabled],
+button[disabled] {
+  cursor: not-allowed;
+}
+
+input:focus, input:active,
+textarea:focus,
+textarea:active,
+select:focus,
+select:active,
+option:focus,
+option:active {
+  background-color: #f2f2f2;
+  border-color: #ccc;
+  -moz-box-shadow: 0 0 0 0px #ccc inset;
+  -webkit-box-shadow: 0 0 0 0px #ccc inset;
+  box-shadow: 0 0 0 0px #ccc inset;
+}
+
+.elgg-form > fieldset {
+  padding: 0;
+}
+
+.elgg-form > fieldset > div {
+  margin-bottom: 10px;
+}
+.elgg-form > fieldset > div:last-of-type {
+  margin-bottom: 0;
+}
+
+.elgg-input-checkboxes,
+.elgg-input-radios,
+.elgg-input-radio {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.elgg-input-checkboxes label,
+.elgg-input-single-checkbox label,
+.elgg-input-radios label,
+.elgg-input-radio label {
+  margin: 0 5px 0 0;
+  font-weight: normal;
+  display: inline-block;
+}
+.elgg-input-checkboxes.elgg-horizontal > li,
+.elgg-input-radios.elgg-horizontal > li,
+.elgg-input-radio.elgg-horizontal > li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.elgg-fieldset-has-legend {
+  border: 1px solid #dedede;
+  padding: 10px;
+}
+
+.elgg-fieldset-horizontal .elgg-field {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+
+.elgg-fieldset-horizontal.elgg-justify-right .elgg-field {
+  margin: 0 0 0 10px;
+}
+
+.elgg-fieldset-horizontal.elgg-justify-center .elgg-field {
+  margin: 0 5px;
+}
+
+.elgg-required-indicator {
+  font-size: 110%;
+  font-weight: bold;
+  color: red;
+  display: inline;
+  padding: 0 5px;
+}
+
+.elgg-field {
+  margin-bottom: 15px;
+}
+.elgg-field:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ***************************************
+      DATE PICKER
+**************************************** */
+.ui-datepicker {
+  display: none;
+  margin: 0;
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 2px 2px 3px #dcdcdc;
+  -webkit-box-shadow: 2px 2px 3px #dcdcdc;
+  box-shadow: 2px 2px 3px #dcdcdc;
+  overflow: hidden;
+  min-width: 300px;
+  background: #f1f1f1;
+}
+
+.ui-datepicker-inline {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.ui-datepicker-header {
+  position: relative;
+  background: transparent;
+  color: #666;
+  padding: 2px 0;
+  border: 0;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.ui-datepicker-header a {
+  color: #666;
+  line-height: 36px;
+  padding: 0 8px;
+}
+
+.ui-datepicker-prev, .ui-datepicker-next {
+  position: absolute;
+  top: 5px;
+  cursor: pointer;
+}
+.ui-datepicker-prev.ui-state-hover, .ui-datepicker-next.ui-state-hover {
+  border: none;
+  background: transparent;
+  font-weight: bold;
+}
+
+.ui-datepicker-prev {
+  left: 6px;
+}
+
+.ui-datepicker-next {
+  right: 6px;
+}
+
+.ui-datepicker-title {
+  line-height: 1.8em;
+  margin: 0 30px;
+  text-align: center;
+  font-weight: normal;
+}
+.ui-datepicker-title select, .ui-datepicker-title .chosen-container {
+  max-width: 100px;
+  display: inline-block;
+  margin: 2px;
+  height: 36px;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 7px;
+  background-color: #ffffff;
+}
+
+.ui-datepicker-calendar {
+  margin: 4px;
+  width: 90%;
+  margin: 4% auto;
+  font-size: 14px;
+}
+
+.ui-datepicker th {
+  color: #666;
+  border: none;
+  font-weight: bold;
+  padding: 5px 6px;
+  text-align: center;
+}
+
+.ui-datepicker td {
+  padding: 1px;
+  min-width: 40px;
+}
+
+.ui-datepicker td span, .ui-datepicker td a {
+  display: block;
+  padding: 3px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.ui-datepicker-calendar .ui-state-default {
+  border: 1px solid #dcdcdc;
+  color: #666;
+  background: #ffffff;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.ui-datepicker-calendar .ui-state-disabled .ui-state-default {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.ui-datepicker-calendar .ui-state-hover,
+.ui-datepicker-calendar .ui-state-active,
+.ui-datepicker-calendar .ui-state-active.ui-state-hover {
+  border: 1px solid #ccc;
+  -moz-box-shadow: 0 0 0 0px #ccc inset;
+  -webkit-box-shadow: 0 0 0 0px #ccc inset;
+  box-shadow: 0 0 0 0px #ccc inset;
+  font-weight: normal;
+  color: #fac455;
+  background: #f2f2f2;
+}
+
+.ui-datepicker-calendar .ui-state-disabled {
+  border: none;
+  color: #dcdcdc;
+  cursor: not-allowed;
+  background: none;
+}
+
+.elgg-user-picker label {
+  display: inline-block;
+  margin: 0;
+  font-weight: normal;
+}
+
+.elgg-user-picker-list:not(:empty) {
+  margin-top: 5px;
+  border-top: 1px solid #f1f1f1;
+}
+
+.elgg-user-picker-list > li {
+  border-bottom: 1px solid #f1f1f1;
+  line-height: 25px;
+  vertical-align: middle;
+  padding: 2px;
+}
+
+.elgg-user-picker.elgg-state-disabled > input,
+.elgg-user-picker.elgg-state-disabled > label {
+  display: none;
+}
+
+.elgg-user-picker-remove {
+  cursor: pointer;
+}
+
+.elgg-user-picker img {
+  vertical-align: middle;
+}
+
+/* ***************************************
+	FRIENDS PICKER
+*************************************** */
+.friends-picker-main-wrapper {
+  margin-bottom: 15px;
+}
+
+.friends-picker-container h3 {
+  font-size: 4em !important;
+  text-align: left;
+  margin: 10px 0 20px !important;
+  color: #999 !important;
+  background: none !important;
+  padding: 0 !important;
+}
+
+.friends-picker .friends-picker-container .panel ul {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.friends-picker-wrapper {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 730px;
+}
+
+.friends-picker {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 730px;
+  height: auto;
+  background-color: #dcdcdc;
+  border-radius: 8px;
+}
+
+.friendspicker-savebuttons {
+  background: white;
+  border-radius: 8px;
+  margin: 0 10px 10px;
+}
+
+.friends-picker .friends-picker-container {
+  /* long container used to house end-to-end panels. Width is calculated in JS  */
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  list-style-type: none;
+}
+
+.friends-picker .friends-picker-container .panel {
+  float: left;
+  height: 100%;
+  position: relative;
+  width: 730px;
+  margin: 0;
+  padding: 0;
+}
+
+.friends-picker .friends-picker-container .panel .wrapper {
+  margin: 0;
+  padding: 4px 10px 10px 10px;
+  min-height: 230px;
+}
+
+.friends-picker-navigation {
+  margin: 0 0 10px;
+  padding: 0 0 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.friends-picker-navigation ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.friends-picker-navigation ul li {
+  float: left;
+  margin: 0;
+  background: white;
+}
+
+.friends-picker-navigation a {
+  font-weight: bold;
+  text-align: center;
+  background: white;
+  color: #999;
+  text-decoration: none;
+  display: block;
+  padding: 0;
+  width: 20px;
+  border-radius: 4px;
+}
+
+.tabHasContent {
+  background: white;
+  color: #333 !important;
+}
+
+.friends-picker-navigation li a:hover {
+  background: #333;
+  color: white !important;
+}
+
+.friends-picker-navigation li a.current {
+  background: #58595b;
+  color: white !important;
+}
+
+.friends-picker-navigation-l, .friends-picker-navigation-r {
+  position: absolute;
+  top: 46px;
+  text-indent: -9000em;
+}
+
+.friends-picker-navigation-l a, .friends-picker-navigation-r a {
+  display: block;
+  height: 40px;
+  width: 40px;
+}
+
+.friends-picker-navigation-l {
+  right: 48px;
+  z-index: 1;
+}
+
+.friends-picker-navigation-r {
+  right: 0;
+  z-index: 1;
+}
+
+.friends-picker-navigation-l {
+  background: url(friendspicker.png) no-repeat left top;
+}
+
+.friends-picker-navigation-r {
+  background: url(friendspicker.png) no-repeat -60px top;
+}
+
+.friends-picker-navigation-l:hover {
+  background: url(friendspicker.png) no-repeat left -44px;
+}
+
+.friends-picker-navigation-r:hover {
+  background: url(friendspicker.png) no-repeat -60px -44px;
+}
+
+.friendspicker-savebuttons .elgg-button-submit,
+.friendspicker-savebuttons .elgg-button-cancel {
+  margin: 5px 20px 5px 5px;
+}
+
+.friendspicker-members-table {
+  background: #dcdcdc;
+  border-radius: 8px;
+  margin: 10px 0 0;
+  padding: 10px 10px 0;
+}
+
+/* ***************************************
+	AUTOCOMPLETE
+*************************************** */
+.ui-autocomplete {
+  position: absolute;
+  cursor: default;
+  z-index: 10000;
+}
+
+.elgg-autocomplete-item .elgg-body {
+  max-width: 600px;
+}
+
+.ui-autocomplete {
+  background-color: white;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.ui-autocomplete .ui-menu-item {
+  padding: 0px 4px;
+  border-radius: 5px;
+}
+
+.ui-autocomplete .ui-menu-item:hover {
+  background-color: #eee;
+}
+
+.ui-autocomplete a:hover {
+  text-decoration: none;
+  color: #58595b;
+}
+
+.ui-autocomplete a.ui-state-hover {
+  background-color: #eee;
+  display: block;
+}
+
+/* @group Base */
+.chosen-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 20px;
+  zoom: 1;
+  *display: inline;
+  max-width: 100%;
+  margin: 5px 0 5px;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.chosen-container * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.chosen-container .chosen-drop {
+  position: absolute;
+  top: 100%;
+  left: -9999px;
+  z-index: 1010;
+  width: 100%;
+  border: 1px solid #dcdcdc;
+  border-top: 0;
+  background: #fff;
+}
+.chosen-container.chosen-with-drop .chosen-drop {
+  left: 0;
+}
+.chosen-container .search-choice .group-name, .chosen-container .chosen-single .group-name {
+  margin-right: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #999999;
+}
+.chosen-container .search-choice .group-name:after, .chosen-container .chosen-single .group-name:after {
+  content: ":";
+  padding-left: 2px;
+  vertical-align: top;
+}
+
+/* @end */
+/* @group Single Chosen */
+.chosen-container-single .chosen-single {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border: 1px solid #dcdcdc;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #fff;
+  background-clip: padding-box;
+  color: #666;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.chosen-container-single .chosen-default {
+  color: #999;
+}
+.chosen-container-single .chosen-single span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 7px 14px;
+  margin-right: 36px;
+}
+.chosen-container-single .chosen-single div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 36px;
+  text-align: center;
+  height: 100%;
+}
+.chosen-container-single .chosen-single div b:after {
+  font-family: "FontAwesome" !important;
+  content: "\f107";
+  display: block;
+  font-size: 10px;
+  line-height: 20px;
+  padding: 7px;
+}
+.chosen-container-single .chosen-search {
+  position: relative;
+  z-index: 1010;
+  margin: 0;
+  white-space: nowrap;
+  border-bottom: 1px solid #dcdcdc;
+}
+.chosen-container-single .chosen-search:before {
+  position: absolute;
+  font-family: "FontAwesome" !important;
+  content: "\f002";
+  display: inline-block;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 7px 0;
+  width: 36px;
+  text-align: center;
+}
+.chosen-container-single .chosen-search input[type="text"] {
+  border: none;
+  padding: 7px 7px 7px 36px;
+  margin: 0;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -moz-border-radius: none;
+  -webkit-border-radius: none;
+  border-radius: none;
+}
+.chosen-container-single .chosen-drop {
+  -moz-border-radius: 0 0 3px 3px;
+  -webkit-border-radius: 0;
+  border-radius: 0 0 3px 3px;
+}
+.chosen-container-single.chosen-container-single-nosearch .chosen-search {
+  position: absolute;
+  left: -9999px;
+}
+
+/* @end */
+/* @group Results */
+.chosen-container .chosen-results {
+  color: #666;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 4px;
+  margin: 0;
+  max-height: 240px;
+  -webkit-overflow-scrolling: touch;
+}
+.chosen-container .chosen-results li {
+  display: none;
+  margin: 0;
+  padding: 7px 14px;
+  list-style: none;
+  line-height: normal;
+  word-wrap: break-word;
+  -webkit-touch-callout: none;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.chosen-container .chosen-results li.active-result {
+  display: list-item;
+  cursor: pointer;
+}
+.chosen-container .chosen-results li.disabled-result {
+  display: list-item;
+  color: #ccc;
+  cursor: default;
+}
+.chosen-container .chosen-results li.highlighted {
+  background-color: #fac455;
+  color: #fff;
+}
+.chosen-container .chosen-results li.no-results {
+  display: list-item;
+}
+.chosen-container .chosen-results li.group-result {
+  display: list-item;
+  font-weight: bold;
+  cursor: default;
+}
+.chosen-container .chosen-results li.group-option {
+  padding-left: 15px;
+}
+.chosen-container .chosen-results li em {
+  font-style: normal;
+  text-decoration: underline;
+}
+
+/* @group Multi Chosen */
+.chosen-container-multi .chosen-choices {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto !important;
+  height: 1%;
+  padding: 2.5px;
+  border: 1px solid #dcdcdc;
+  background-color: #fff;
+  cursor: text;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.chosen-container-multi .chosen-choices li {
+  display: inline-block;
+  list-style: none;
+  margin: 2.5px;
+}
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+  min-width: 100px;
+  margin: 0;
+}
+.chosen-container-multi .chosen-choices li.search-choice {
+  position: relative;
+  padding: 7px 14px;
+  max-width: 100%;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #f4f4f4;
+  color: #666;
+}
+.chosen-container-multi .chosen-choices li.search-choice span {
+  word-wrap: break-word;
+}
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+  color: #666;
+  display: inline-block;
+  margin-left: 6px;
+}
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close:after {
+  content: "\00d7";
+}
+.chosen-container-multi .chosen-choices li.search-choice-disabled {
+  padding-right: 5px;
+  border: 2px solid #ccc;
+  background-color: #e4e4e4;
+  color: #666;
+}
+.chosen-container-multi .chosen-choices li.search-choice-focus {
+  background: #d4d4d4;
+}
+.chosen-container-multi .chosen-drop .result-selected {
+  display: list-item;
+  color: #ccc;
+  cursor: default;
+}
+
+/* @end */
+/* @group Active  */
+.chosen-container-active .chosen-single {
+  border: 1px #ccc solid;
+  -moz-box-shadow: 0 0 0 0px #ccc inset;
+  -webkit-box-shadow: 0 0 0 0px #ccc inset;
+  box-shadow: 0 0 0 0px #ccc inset;
+}
+.chosen-container-active.chosen-with-drop .chosen-single, .chosen-container-active.chosen-with-drop .chosen-choices {
+  border: 1px solid #dcdcdc;
+  -moz-border-radius: 3px 3px 0 0;
+  -webkit-border-radius: 3px;
+  border-radius: 3px 3px 0 0;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.chosen-container-active.chosen-with-drop .chosen-single div {
+  border-left: none;
+  background: transparent;
+}
+
+/* @end */
+/* @group Disabled Support */
+.chosen-disabled {
+  opacity: 0.5 !important;
+  cursor: default;
+}
+.chosen-disabled .chosen-single {
+  cursor: default;
+}
+.chosen-disabled .chosen-choices .search-choice .search-choice-close {
+  cursor: default;
+}
+
+/* @end */
+.chose-image-small, .chose-image-list, .chose-image {
+  max-height: 14px !important;
+  max-width: 21px !important;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 7px !important;
+  -moz-border-radius: 1.5px;
+  -webkit-border-radius: 1.5px;
+  border-radius: 1.5px;
+}
+
+.elgg-form .elgg-foot > * {
+  margin-right: 5px;
+}
+.elgg-form .elgg-foot > *:last-child {
+  margin-right: 0;
+}
+
+.elgg-form-login, .elgg-form-register, .elgg-form-user-requestnewpassword {
+  width: 400px;
+  max-width: 100%;
+}
+@media only screen and (max-width: 40em) {
+  .elgg-form-login, .elgg-form-register, .elgg-form-user-requestnewpassword {
+    min-width: 275px;
+  }
+}
+
+.elgg-form-usersettings-save, .elgg-form-usersettings-notifications {
+  padding: 20px;
+}
+
+.elgg-form-login .forgot_link {
+  float: right;
+  font-size: 11px;
+  line-height: 20px;
+}

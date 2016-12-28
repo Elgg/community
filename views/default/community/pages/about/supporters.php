@@ -26,7 +26,7 @@
 </p>
 
 
-<div class="elgg-module elgg-module-landing">
+<div class="elgg-module elgg-module-info">
 	<div class="elgg-head">
 		<h3>Organization Supporters</h3>
 	</div>
@@ -156,7 +156,7 @@
 		</table>
 	</div>
 </div>
-<div class="elgg-module elgg-module-landing">
+<div class="elgg-module elgg-module-info">
 	<div class="elgg-head">
 		<h3>Individual Supporters</h3>
 	</div>

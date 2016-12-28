@@ -1,3 +1,25 @@
 .cke_bottom {
 	display: none !important;
 }
+
+form .cke.cke_reset {
+	box-shadow: none;
+	border-color: #dcdcdc;
+	border-radius: 3px;
+	overflow: hidden;
+}
+form .cke_inner .cke_top {
+	background-image: none;
+	background-color: #fff;
+	border: none;
+	box-shadow: none;
+	border-radius: 3px 3px 0 0;
+}
+form .cke_button:hover {
+	background: #f1f1f1;
+	box-shadow: none;
+}
+form .cke_button:active {
+	box-shadow: none;
+	background: #dcdcdc;
+}

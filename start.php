@@ -14,7 +14,7 @@ function community_init() {
 
 	elgg_extend_view('elgg.css', 'community.css');
 
-	elgg_register_css('fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese');
+	elgg_register_css('fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:400,600&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese');
 	elgg_load_css('fonts');
 
 	elgg_unregister_plugin_hook_handler('prepare', 'menu:site', '_elgg_site_menu_setup');

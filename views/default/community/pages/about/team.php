@@ -13,4 +13,4 @@ $list = elgg_list_entities([
 
 <?php
 
-echo elgg_view_module('landing', 'Core Team', $list);
+echo elgg_view_module('info', 'Core Team', $list);
