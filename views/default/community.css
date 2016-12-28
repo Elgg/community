@@ -64,10 +64,15 @@ h1, h2, h3, h4 {
     padding: 10px 15px;
     vertical-align: middle;
     color: #fff;
+	background: transparent;
 }
 
 #login-dropdown-box {
     border-top: 0;
+	border-radius: 0;
+	width: auto;
+	max-width: 300px;
+	z-index: 1000;
 }
 
 
@@ -636,7 +641,7 @@ blockquote {
 }
 
 .elgg-menu-entity > li > a {
-	color: inherit;
+	color: #006d9c;
 }
 
 .elgg-menu-entity > li .elgg-icon {
