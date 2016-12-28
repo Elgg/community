@@ -45,12 +45,38 @@ h1, h2, h3, h4 {
     line-height: 50px;
 }
 
+#login-dropdown {
+    order: 2;
+    position: static;
+    top: auto;
+    right: auto;
+}
+
+@media only screen and (min-width: 990px) {
+	#login-dropdown {
+		order: 5;
+	}
+}
+
+#login-dropdown a {
+    font-size: 17px;
+    line-height: 40px;
+    padding: 10px 15px;
+    vertical-align: middle;
+    color: #fff;
+}
+
+#login-dropdown-box {
+    border-top: 0;
+}
+
+
 .elgg-nav-collapse {
 	height: auto;
 	width: 100%;
 	z-index: 1000;
 	flex-grow: 4;
-	order: 3;
+	order: 4;
 	display: none;
 }
 
@@ -83,7 +109,7 @@ h1, h2, h3, h4 {
 	transition: ease-in-out 0.5s;
 	cursor: pointer;
 	display: block;
-	order: 2;
+	order: 3;
 	flex-grow: 0;
 }
 @media only screen and (min-width: 990px) {

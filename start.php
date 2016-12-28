@@ -108,14 +108,6 @@ function community_setup_site_menu($hook, $type, $return, $params) {
 		}
 
 		$return[] = ElggMenuItem::factory([
-					'name' => 'login',
-					'text' => 'Login',
-					'href' => 'login',
-					'priority' => 1,
-					'parent_name' => 'community',
-		]);
-
-		$return[] = ElggMenuItem::factory([
 					'name' => 'register',
 					'text' => 'Register',
 					'href' => $registration_url,
