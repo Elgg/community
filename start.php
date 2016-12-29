@@ -26,8 +26,6 @@ function community_init() {
 
 	elgg_register_plugin_hook_handler('forward', 'all', 'community_forward');
 
-	elgg_register_plugin_hook_handler('action', 'login', 'community_login_action');
-
 	elgg_register_page_handler('about', 'community_about_page_handler');
 	elgg_register_plugin_hook_handler('register', 'menu:page', 'community_setup_page_menu');
 
@@ -194,15 +192,6 @@ function community_setup_page_menu($hook, $type, $return, $params) {
 	}
 
 	return $return;
-}
-
-function community_login_action() {
-	if (empty($_SERVER['HTTP_REFERER'])) {
-		return;
-	}
-	if ($_SERVER['HTTP_REFERER'] === elgg_get_site_url()) {
-		elgg_get_session()->set('last_forward_from', ELGG_COMMUNITY_THEME_SUPPORT_URL);
-	}
 }
 
 function community_forward($h, $t, $v, $p) {
