@@ -66,6 +66,7 @@ if ($num_replies != 0) {
 			'href' => $topic->getURL() . '#group-replies',
 			'text' => $num_replies . ' ' . elgg_echo('discussion:replies'),
 			'priority' => 800,
+			'section' => 'social',
 		],
 	];
 }

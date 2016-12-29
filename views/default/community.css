@@ -631,8 +631,41 @@ blockquote {
     margin: 0 10px 0 0;
 }
 
-.elgg-menu-entity > li > a {
+.elgg-menu-entity-social > li > a {
 	color: #006d9c;
+}
+
+.elgg-listing-metadata {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 5px 0;
+}
+
+.elgg-listing-metadata > ul:first-child {
+    margin-right: auto;
+    flex-grow: 1;
+}
+
+.elgg-menu-entity > li {
+    margin: 0;
+}
+
+.elgg-menu-entity > li + li:before {
+	content: "|";
+	padding: 0 5px;
+	display: inline;
+	color: #aaa;
+	font-size: 10px;
+}
+
+.elgg-menu-entity > li.hidden:before {
+	display: none;
+}
+
+.elgg-menu-entity > li > a {
+    display: inline-block;
 }
 
 .elgg-menu-entity > li .elgg-icon {

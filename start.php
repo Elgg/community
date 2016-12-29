@@ -30,6 +30,8 @@ function community_init() {
 	elgg_register_plugin_hook_handler('register', 'menu:page', 'community_setup_page_menu');
 
 	elgg_extend_view('page/elements/sidebar', 'community/sidebar/donate', 999);
+
+	elgg_register_plugin_hook_handler('register', 'menu:entity', 'community_setup_entity_menu');
 }
 
 /**
@@ -492,4 +494,49 @@ function community_handle_legacy_pages($hook, $type, $return, $params) {
 			}
 			return false;
 	}
+}
+
+/**
+ * Expand icon menu items to show text
+ * 
+ * @param string         $hook   "register"
+ * @param string         $type   "menu:entity"
+ * @param ElggMenuItem[] $return Menu
+ * @param array          $params Hook params
+ * @return ElggMenuItem[]
+ */
+function community_setup_entity_menu($hook, $type, $return, $params) {
+
+	foreach ($return as $key => $item) {
+
+		switch ($item->getName()) {
+
+			case 'report_spam' :
+				$item->setText(elgg_echo('community:report_spam'));
+				break;
+
+			case 'likes' :
+				$item->setText(elgg_echo('community:like'));
+				$item->setSection('social');
+				break;
+
+			case 'unlike' :
+				$item->setText(elgg_echo('community:unlike'));
+				$item->setSection('social');
+				break;
+
+			case 'likes_count' :
+				$item->setSection('social');
+				break;
+			
+			case 'delete' :
+				$item->setText(elgg_echo('delete'));
+				break;
+
+		}
+
+		$return[$key] = $item;
+	}
+
+	return $return;
 }
