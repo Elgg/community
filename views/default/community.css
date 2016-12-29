@@ -531,6 +531,9 @@ a {
 	font-family: inherit;
 	transition: all 0.5s ease-in-out;
 }
+a.elgg-button {
+	padding: 8px 12px;
+}
 .elgg-button,
 .elgg-button-action,
 .elgg-button-delete,
