@@ -470,17 +470,8 @@ h1, h2, h3, h4 {
 }
 
 .elgg-module-landing ul > li svg {
-    max-width: 75px;
-    max-height: 75px;
-	-webkit-filter: grayscale(0.8);
-	-webkit-filter: grayscale(80%);
-	filter: gray;
-	filter: grayscale(80%);
-}
-.elgg-module-landing ul > li:hover svg {
-	-webkit-filter: none;
-	filter: none;
-	filter: none;
+    width: 75px;
+    height: 75px;
 }
 
 .elgg-module-landing ul > li .elgg-image-block {
