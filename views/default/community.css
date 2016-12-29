@@ -755,3 +755,20 @@ blockquote {
     color: inherit;
     font-size: inherit;
 }
+
+/* Comment highlighting that automatically fades away */
+.elgg-comments .elgg-state-highlight,
+.elgg-river-comments .elgg-state-highlight {
+	-webkit-animation: comment-highlight 5s; /* Chrome, Safari, Opera */
+	animation: comment-highlight 5s;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes comment-highlight {
+	from {background: rgba(0, 172, 247, 0.05)}
+	to {background: white;}
+}
+/* Standard syntax */
+@keyframes comment-highlight {
+	from {background: rgba(0, 172, 247, 0.05)}
+	to {background: white;}
+}
