@@ -747,3 +747,11 @@ blockquote {
 	display: inline-block;
 	padding: 2.5px;
 }
+
+.elgg-menu-river .elgg-icon-hover {
+	font-size: inherit;
+}
+.elgg-menu-river .elgg-icon:not(.elgg-icon-hover) {
+    color: inherit;
+    font-size: inherit;
+}
