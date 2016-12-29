@@ -713,3 +713,37 @@ blockquote {
     white-space: nowrap;
     vertical-align: middle;
 }
+
+.elgg-main > .elgg-head {
+  border-bottom: 1px solid #EBEBEB;
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+.elgg-main > .elgg-head > h1,
+.elgg-main > .elgg-head > h2,
+.elgg-main > .elgg-head > h3 {
+  order: 1;
+  padding: 5px;
+  margin-right: auto;
+}
+.elgg-main > .elgg-head > .elgg-menu {
+  order: 2;
+}
+.elgg-heading-main {
+    padding: 0;
+    margin: 0;
+}
+
+.elgg-menu-title {
+	padding: 2.5px;
+	float: none;
+}
+.elgg-menu-title > li {
+	display: inline-block;
+	padding: 2.5px;
+}
