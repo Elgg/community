@@ -646,3 +646,18 @@ blockquote {
     margin-top: -10px;
     padding: 10px;
 }
+
+.elgg-river-layout .elgg-river-selector {
+    margin: 0;
+}
+
+.elgg-river-layout .elgg-river-selector select {
+    display: inline-block;
+    margin: 0;
+    width: auto;
+}
+
+.elgg-river-layout .elgg-river-selector span {
+    display: inline-block;
+    margin: 0 5px 0 0;
+}

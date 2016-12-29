@@ -939,22 +939,3 @@ option:active {
   margin-right: 0;
 }
 
-.elgg-form-login, .elgg-form-register, .elgg-form-user-requestnewpassword {
-  width: 400px;
-  max-width: 100%;
-}
-@media only screen and (max-width: 40em) {
-  .elgg-form-login, .elgg-form-register, .elgg-form-user-requestnewpassword {
-    min-width: 275px;
-  }
-}
-
-.elgg-form-usersettings-save, .elgg-form-usersettings-notifications {
-  padding: 20px;
-}
-
-.elgg-form-login .forgot_link {
-  float: right;
-  font-size: 11px;
-  line-height: 20px;
-}
