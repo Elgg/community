@@ -33,6 +33,8 @@ function community_init() {
 	elgg_extend_view('page/elements/sidebar', 'community/sidebar/donate', 999);
 
 	elgg_register_plugin_hook_handler('register', 'menu:entity', 'community_setup_entity_menu');
+
+	elgg_extend_view('chosen/chosen.css', 'elements/forms/chosen.css');
 }
 
 /**
