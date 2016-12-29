@@ -780,3 +780,20 @@ blockquote {
 	from {background: rgba(0, 172, 247, 0.05)}
 	to {background: white;}
 }
+
+.elgg-module-info > .elgg-head {
+	margin-bottom: 0;
+}
+
+.elgg-list > li {
+	padding: 10px;
+	border-bottom-color: #ebebeb;
+}
+.elgg-no-results {
+	padding: 10px;
+}
+.elgg-widget-more {
+	padding: 0 10px;
+    display: inline-block;
+	font-weight: bold;
+}
