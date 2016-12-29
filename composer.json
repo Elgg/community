@@ -17,6 +17,8 @@
         }
     ],
     "require": {
-        "composer/installers": ">=1.0.8"
+        "composer/installers": ">=1.0.8",
+		"components/highlightjs": "^8.7.0",
+		"bower-asset/require-css": "0.1.8"
     }
 }
