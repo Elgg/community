@@ -76,7 +76,7 @@ return [
 	'community:credits:cover' => 'Cover image by <a href="https://www.flickr.com/photos/40553681@N02/">Raül Utrera</a> is used under Creative Commons license.',
 	'community:credits:icons' => 'Icons by <a href="https://flaticon.com/">Flaticon</a> and <a href="https://fontawesome.io">FontAwesome</a>.',
 
-	'community:report_spam' => 'Spam',
+	'community:report_spam' => 'Report spam',
 	'community:like' => 'Like',
 	'community:unlike' => 'Unlike',
 ];
