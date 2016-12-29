@@ -800,3 +800,15 @@ blockquote {
     display: inline-block;
 	font-weight: bold;
 }
+
+#plugins_front_welcome h3 {
+    margin-top: 20px;
+}
+
+#plugins_welcome_text {
+    padding: 10px 0 20px;
+}
+
+#plugins_front_welcome {
+    background-position: 100% 50%;
+}
