@@ -13,7 +13,8 @@ elgg_register_plugin_hook_handler('route:rewrite', 'all', 'community_handle_lega
 function community_init() {
 
 	elgg_extend_view('elgg.css', 'community.css');
-
+	elgg_extend_view('elgg.js', 'community/lightbox.js');
+	
 	elgg_register_css('fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:400,600&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese');
 	elgg_load_css('fonts');
 
