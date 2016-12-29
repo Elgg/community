@@ -591,33 +591,33 @@ blockquote {
 .elgg-table,
 .elgg-table-alt,
 .theme-sandbox-table {
-  width: 100%;
-  border-top: 1px solid #dcdcdc;
-  table-layout: fixed;
+	width: 100%;
+	border-top: 1px solid #dcdcdc;
+	table-layout: fixed;
 }
 .elgg-table td, .elgg-table th,
 .elgg-table-alt td,
 .elgg-table-alt th,
 .theme-sandbox-table td,
 .theme-sandbox-table th {
-  padding: 5px 10px;
-  border-bottom: 1px solid #dcdcdc;
+	padding: 5px 10px;
+	border-bottom: 1px solid #dcdcdc;
 }
 .elgg-table th,
 .elgg-table-alt th,
 .theme-sandbox-table th {
-  background-color: #f4f4f4;
-  color: #333;
-  font-weight: bold;
+	background-color: #f4f4f4;
+	color: #333;
+	font-weight: bold;
 }
 .elgg-table tr:hover,
 .elgg-table-alt tr:hover,
 .theme-sandbox-table tr:hover {
-  background: #f4f4f4;
+	background: #f4f4f4;
 }
 
 .elgg-table-alt td:first-child {
-  width: 200px;
+	width: 200px;
 }
 
 .elgg-menu-entity {
@@ -695,13 +695,22 @@ blockquote {
     margin: 0 5px 0 0;
 }
 
+.elgg-main .elgg-breadcrumbs {
+	top: 0;
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    background: #fafafa;
+    margin-bottom: 20px;
+}
+
 .elgg-breadcrumbs > li:after {
     content: "\f054";
-    padding: 0 4px;
+    padding: 0 7px;
     font-weight: normal;
     font-family: "FontAwesome";
-    font-size: 9px;
+    font-size: 7px;
     vertical-align: middle;
+    line-height: 19px;
 }
 
 .elgg-breadcrumbs > li > a {
@@ -715,24 +724,23 @@ blockquote {
 }
 
 .elgg-main > .elgg-head {
-  border-bottom: 1px solid #EBEBEB;
-  margin-bottom: 10px;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-end;
-  margin-bottom: 20px;
+	border-bottom: 1px solid #EBEBEB;
+	margin-bottom: 10px;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-end;
 }
 .elgg-main > .elgg-head > h1,
 .elgg-main > .elgg-head > h2,
 .elgg-main > .elgg-head > h3 {
-  order: 1;
-  padding: 5px;
-  margin-right: auto;
+	order: 1;
+	padding: 5px;
+	margin-right: auto;
 }
 .elgg-main > .elgg-head > .elgg-menu {
-  order: 2;
+	order: 2;
 }
 .elgg-heading-main {
     padding: 0;
