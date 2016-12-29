@@ -661,3 +661,22 @@ blockquote {
     display: inline-block;
     margin: 0 5px 0 0;
 }
+
+.elgg-breadcrumbs > li:after {
+    content: "\f054";
+    padding: 0 4px;
+    font-weight: normal;
+    font-family: "FontAwesome";
+    font-size: 9px;
+    vertical-align: middle;
+}
+
+.elgg-breadcrumbs > li > a {
+    display: inline-block;
+    color: inherit;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
