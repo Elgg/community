@@ -23,6 +23,7 @@ $replies = elgg_list_entities(array(
 	'reverse_order_by' => true,
 	'distinct' => false,
 	'url_fragment' => 'group-replies',
+	'full_view' => true,
 		));
 
 if ($show_add_form) {

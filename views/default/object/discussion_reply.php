@@ -1,14 +1,11 @@
 <?php
 
 /**
- * Elgg comment view
- *
- * @uses $vars['entity']    ElggComment
- * @uses $vars['full_view'] Display full view or brief view
+ * Forum reply entity view
  */
 $full_view = elgg_extract('full_view', $vars, true);
 $comment = elgg_extract('entity', $vars);
-/* @var ElggComment $comment */
+/* @var ElggDiscussionReply $comment */
 
 $entity = get_entity($comment->container_guid);
 $commenter = get_user($comment->owner_guid);
@@ -31,14 +28,14 @@ $friendlytime = elgg_view('output/url', [
 
 if ($full_view) {
 	$anchor = elgg_view('output/url', [
-		'name' => "comment-{$comment->guid}",
+		'name' => "reply-{$comment->guid}",
 	]);
 
 	$menu = '';
 	if (!elgg_in_context('widgets') && !elgg_in_context('activity')) {
 		$menu = elgg_view_menu('entity', array(
 			'entity' => $comment,
-			'handler' => 'comment',
+			'handler' => 'discussion_reply',
 			'sort_by' => 'priority',
 			'class' => 'elgg-menu-hz',
 		));
@@ -47,7 +44,7 @@ if ($full_view) {
 	$comment_text = elgg_view('output/longtext', array(
 		'value' => $comment->description,
 		'class' => 'elgg-inner',
-		'data-role' => 'comment-text',
+		'data-role' => 'discussion-reply-text',
 	));
 
 	echo $anchor . elgg_view('object/elements/summary', [
