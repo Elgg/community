@@ -9,7 +9,7 @@ $title = 'Supporter Scheme';
 ob_start();
 ?>
 
-<p>
+<p class="elgg-output">
 	Are you an individual or organization who uses and likes Elgg? Consider becoming an official supporter of the Elgg project.
 	With only $50 per year for individuals or $150 per year for organizations, you can help the Elgg project. 
 	<?=

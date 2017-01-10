@@ -30,7 +30,9 @@ function community_init() {
 	elgg_register_page_handler('about', 'community_about_page_handler');
 	elgg_register_plugin_hook_handler('register', 'menu:page', 'community_setup_page_menu');
 
-	elgg_extend_view('page/elements/sidebar', 'community/sidebar/donate', 999);
+	elgg_extend_view('page/elements/sidebar', 'community/sidebar/github', 900);
+	elgg_extend_view('page/elements/sidebar', 'community/sidebar/donate', 910);
+	elgg_extend_view('page/elements/sidebar', 'community/sidebar/hosting', 920);
 
 	elgg_register_plugin_hook_handler('register', 'menu:entity', 'community_setup_entity_menu');
 

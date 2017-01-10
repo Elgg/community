@@ -3,14 +3,14 @@ $services = array(
 	array(
 		'name' => 'Keetup Development',
 		'url' => 'http://www.keetup.com/elgg-services',
-		'profile_url' => 'https://community.elgg.org/profile/pedroprez',
+		'profile_url' => 'https://elgg.org/profile/pedroprez',
 		'blurb' => 'We are professional Elgg developers specializing in plugins, themes and social networking advice. We also advise companies on Elgg implementations.',
 		'icon_filename' => 'keetup.png'
 	),
 	array(
 		'name' => 'Arck Interactive',
 		'url' => 'http://www.arckinteractive.com/',
-		'profile_url' => 'https://community.elgg.org/profile/arckinteractive',
+		'profile_url' => 'https://elgg.org/profile/arckinteractive',
 		'blurb' => 'We are a Portland-based web development agency focused on developing custom social networks, intranets and other applications using Elgg.',
 		'icon_filename' => 'arck.jpg'
 	),

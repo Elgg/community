@@ -23,4 +23,4 @@
 	violating domain, so please contact us if you need help.</p>
 
 <p>Violators of this policy will not be permitted to have an account on
-	community.elgg.org or to advertise services on elgg.org.</p>
+	elgg.org or to advertise services on elgg.org.</p>

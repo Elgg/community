@@ -18,12 +18,25 @@ list($lts_version, $lts_date) = each($lts_releases);
 ?>
 <div class="elgg-box elgg-state-notice">
 	The simplest way to install and maintain your Elgg project is via Composer. 
-	Please check our <b><a href="http://learn.elgg.org/en/stable/intro/install.html" tartet="_blank">Installation</a></b> docs for instrutions.
+	Please check our <b><a href="http://learn.elgg.org/en/stable/intro/install.html" tartet="_blank">Installation</a></b> docs for instructions.
+</div>
+
+<div class="elgg-module elgg-module-info">
+	<div class="elgg-head">
+		<h3>License</h3>
+	</div>
+	<div class="elgg-body">
+		<p class="elgg-output">Elgg is available under GPL Version 2, with a portion of the code alternately available under MIT.
+			<a href="http://learn.elgg.org/en/latest/intro/license.html">More info</a>.</p>
+		<p class="elgg-output">You may
+			<a href="mailto:info@elgg.org">request an MIT release</a> (please specify version) or create one easily: After executing
+			<code>composer install</code>, delete the contents of the <code>/mod</code> directory.</p>
+	</div>
 </div>
 
 <?php
 if ($devs) {
-	$content = "<p>Elgg $dev_version is available for early testers. <strong>Do not use this version in production.</strong><br />
+	$content = "<p class=\"elgg-output\">Elgg $dev_version is available for early testers. <strong>Do not use this version in production.</strong><br />
 		Please report all bugs to <a href=\"https://github.com/Elgg/Elgg/issues\">GitHub</a></p>";
 
 	$button = elgg_view('output/url', [
@@ -34,7 +47,7 @@ if ($devs) {
 
 
 	$content = elgg_format_element('div', [
-		'class' => 'elgg-output pbl',
+		'class' => 'elgg-output',
 			], $content);
 
 
@@ -43,11 +56,11 @@ if ($devs) {
 	]);
 }
 
-$content = "<p>ElggElgg $stable_version (<a href=\"https://github.com/Elgg/Elgg/blob/$stable_version/CHANGELOG.md\">changelog</a>)
+$content = "<p class=\"elgg-output\">ElggElgg $stable_version (<a href=\"https://github.com/Elgg/Elgg/blob/$stable_version/CHANGELOG.md\">changelog</a>)
 	is the latest and recommended version of Elgg.</p>";
 
 $content = elgg_format_element('div', [
-	'class' => 'elgg-output pbl',
+	'class' => 'elgg-output',
 		], $content);
 
 $button = elgg_view('output/url', [
@@ -63,10 +76,10 @@ echo elgg_view_module('info', "Stable Release - $stable_date", $content, [
 
 $lts_branch = Releases::$lts_branch;
 
-$content = "<p>Elgg $lts_version (<a href=\"https://github.com/Elgg/Elgg/blob/$lts_version/CHANGELOG.md\">changelog</a>) is the recommended release if using Elgg $lts_branch</p>";
+$content = "<p class=\"elgg-output\">Elgg $lts_version (<a href=\"https://github.com/Elgg/Elgg/blob/$lts_version/CHANGELOG.md\">changelog</a>) is the recommended release if using Elgg $lts_branch</p>";
 
 $content = elgg_format_element('div', [
-	'class' => 'elgg-output pbl',
+	'class' => 'elgg-output',
 		], $content);
 
 $button = elgg_view('output/url', [
@@ -78,58 +91,28 @@ $button = elgg_view('output/url', [
 echo elgg_view_module('info', "LTS Release - $lts_date", $content, [
 	'footer' => $button,
 ]);
-?>
 
-<div class="clearfix">
-	<div class="elgg-col elgg-col-2of3">
-		<div class="elgg-module elgg-module-info prl">
-			<div class="elgg-head">
-				<h3>Hosting</h3>
-			</div>
-			<div class="elgg-body">
-				<p>If you are looking for somewhere to host your Elgg powered network, we are putting together
-					a <a href="hosting.php" class="accent_color">list of providers</a> who have added Elgg hosting to their services.</p>
-				<p><a href="https://partners.a2hosting.com/solutions.php?id=1686&url=443" target="_blank">
-						<img src="<?= elgg_get_simplecache_url('images/a2hosting_mini_banner.gif') ?>" border="0" alt="A2 Hosting" /></a></p>
-				<p><a href="http://www.arckcloud.com/elgg-hosting/" target="_blank">
-						<img src="<?= elgg_get_simplecache_url('images/arckcloud-small-banner.png') ?>" border="0" alt="Arckcloud Hosting" /></a></p>
-				<p><a href="http://arvixe.evyy.net/c/303140/196991/3370" target="_blank">
-						<img border="0" src="https://affiliates.arvixe.com/banners/266x46.Elgg.gif" alt="Arvixe Hosting"></a></p>
-			</div>
-		</div>
-	</div>
-	<div class="elgg-col elgg-col-1of3">
-		<div class="elgg-module elgg-module-info">
-			<div class="elgg-head">
-				<h3>License</h3>
-			</div>
-			<div class="elgg-body">
-				<p>Elgg is available under GPL Version 2, with a portion of the code alternately available under MIT.
-					<a href="http://learn.elgg.org/en/latest/intro/license.html">More info</a>.</p>
-				<p>You may
-					<a href="mailto:info@elgg.org">request an MIT release</a> (please specify version) or create one easily: After executing
-					<code>composer install</code>, delete the contents of the <code>/mod</code> directory.</p>
-			</div>
-		</div>
-		<div class="elgg-module elgg-module-info">
-			<div class="elgg-head">
-				<h3>Elgg on Github</h3>
-			</div>
-			<div class="elgg-body">
-				<p>You can follow the latest work in progress or contribute via GitHub.</p>
-				<p><a href="https://github.com/Elgg/Elgg">https://github.com/Elgg/Elgg</a></p>
-			</div>
-		</div>
-	</div>
-</div>
-
-<?php
 $release_li = function ($version, $date, $in_git = true) {
-	$git_link = '';
+	$links = [];
+
+	$links[] = elgg_view('output/url', [
+		'href' => "getelgg.php?forward=elgg-{$version}.zip",
+		'text' => 'zip',
+	]);
+
 	if ($in_git) {
-		$git_link = ", <a href='https://github.com/Elgg/Elgg/tree/$version'>source</a>";
+		$links[] = elgg_view('output/url', [
+			'href' => "https://github.com/Elgg/Elgg/tree/$version",
+			'text' => 'source',
+			'is_trusted' => true,
+		]);
 	}
-	return "<li class=\"elgg-item pam\"><b>$version</b> (<a href='getelgg.php?forward=elgg-{$version}.zip'>zip</a>$git_link) - released $date </li>";
+
+	$links = implode(', ', $links);
+
+	return elgg_format_element('li', [
+		'class' => 'elgg-item pam',
+			], "<span><b>$version</b> ($links) - released $date</span>");
 };
 ?>
 
@@ -167,7 +150,7 @@ $release_li = function ($version, $date, $in_git = true) {
 		$branches = Releases::$security_branches;
 		$last_branch = array_pop($branches);
 		?>
-		<p><b>Elgg <?= implode(', ', $branches) ?>, and <?= $last_branch ?> are receiving only security updates.</b></p>
+		<p class="elgg-output"><b>Elgg <?= implode(', ', $branches) ?>, and <?= $last_branch ?> are receiving only security updates.</b></p>
 		<ul class="elgg-list">
 			<?php
 			foreach (Releases::$security_branches as $branch) {
@@ -186,7 +169,7 @@ $release_li = function ($version, $date, $in_git = true) {
 		<h3>Unsupported releases</h3>
 	</div>
 	<div class="elgg-body">
-		<p><b>These versions of Elgg are no longer supported:</b></p>
+		<p class="elgg-output"><b>These versions of Elgg are no longer supported:</b></p>
 		<ul class="elgg-list">
 			<?php
 			foreach (Releases::getUnsupportedReleases() as $version => $date) {

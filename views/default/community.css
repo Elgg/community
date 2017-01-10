@@ -784,8 +784,22 @@ blockquote {
 	to {background: white;}
 }
 
+.elgg-module img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	display: inline-block;
+}
+
 .elgg-module-info > .elgg-head {
 	margin-bottom: 0;
+}
+.elgg-module-info > .elgg-body {
+	padding: 10px;
+}
+
+.elgg-module-info > .elgg-foot {
+	padding: 10px;
 }
 
 .elgg-list > li {
