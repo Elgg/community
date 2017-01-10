@@ -258,7 +258,8 @@ h1, h2, h3, h4 {
 }
 
 .elgg-page-landing .elgg-hero {
-    background-image: url(images/cover.jpg);
+	background-color: #505050;
+    background-image: url(images/cover_mini.jpg);
     background-repeat: no-repeat;
     height: 45vh;
     background-origin: border-box;
