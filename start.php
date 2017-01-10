@@ -487,6 +487,7 @@ function community_handle_legacy_pages($hook, $type, $return, $params) {
 		case 'powering.php' :
 			return [
 				'identifier' => 'showcase',
+				'segments' => [],
 			];
 
 		case 'news' :
