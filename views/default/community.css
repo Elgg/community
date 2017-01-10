@@ -260,69 +260,103 @@ h1, h2, h3, h4 {
 .elgg-page-landing .elgg-hero {
 	background-color: #505050;
     background-image: url(images/cover_mini.jpg);
+	background-blend-mode: multiply;
     background-repeat: no-repeat;
-    height: 45vh;
+    min-height: 400px;
     background-origin: border-box;
     position: relative;
-    background-size: 2000px;
-    text-align: right;
+    background-size: cover;
+	background-position: 0 100%;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
 }
-
-.elgg-hero-github {
-	display:  none;
-	position: absolute;
-	left: 0;
-}
-
-@media screen and (min-width: 990px) {
-	.elgg-hero-github {
-		display: block;
-	}
-}
-
 
 .elgg-page-landing .elgg-page-body {
     padding: 0;
 }
 
+.elgg-page-landing .elgg-hero > .elgg-inner {
+	max-width: 990px;
+	height: 100%;
+	margin: 0 auto;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-self: center;
+	padding: 30px 30px 10px;
+	flex-grow: 1;
+}
+
 .elgg-page-landing .elgg-hero h1 {
-    font-size: 5vh;
+    font-size: 35px;
     color: white;
     font-weight: normal;
-    position: absolute;
-    right: 5vw;
-    bottom: 19vh;
-    text-shadow: -1px 3px #000;
     line-height: normal;
+	padding: 10px;
+}
+
+.elgg-page-landing .elgg-hero h1 span {
 	max-width: 700px;
+	display: block;
 }
 
 .elgg-page-landing .elgg-hero h2 {
-    position: absolute;
-    right: 5vw;
-    bottom: 12vh;
-    color: #ccc;
-    text-shadow: -1px 2px #000;
+	color: #f4f4f4;
     line-height: normal;
-    font-size: 2.2vh;
+    font-size: 18px;
+	padding: 10px;
+}
+
+.elgg-page-landing .elgg-hero h2 span {
 	max-width: 500px;
+	display: block;
 }
 
 .elgg-page-landing .elgg-hero-calls {
-	position: absolute;
-    bottom: 4vh;
-    right: 5vw;
+	padding: 10px;
 }
 
 .elgg-page-landing .elgg-hero-call {
     color: #fff;
     background: #00acf7;
-    font-size: 2vh;
+    font-size: 15px;
     line-height: normal;
     padding: 10px;
-    border-radius: 7px;
+    border-radius: 4px;
     font-family: 'Roboto';
 	transition: background 1s ease-in-out;
+	display: inline-block;
+}
+
+.elgg-page-landing .elgg-hero-call.elgg-hero-github {
+	display: none;
+}
+
+@media screen and (min-width: 991px) {
+	.elgg-page-landing .elgg-hero h1 {
+		font-size: 44px;
+	}
+	.elgg-page-landing .elgg-hero h2 {
+		font-size: 22px;
+	}
+	.elgg-page-landing .elgg-hero-call {
+		font-size: 18px;
+	}
+	.elgg-page-landing .elgg-hero-call.elgg-hero-github {
+		display: inline-block;
+	}
+	.elgg-page-landing .elgg-hero > .elgg-inner {
+		padding: 30px 30px 10px;
+	}
+}
+
+.elgg-page-landing .elgg-hero-call .elgg-icon {
+    color: inherit;
+    font-size: inherit;
+    margin-right: 10px;
 }
 
 .elgg-page-landing .elgg-hero-call:not(:last-child) {

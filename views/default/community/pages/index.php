@@ -13,35 +13,33 @@ reset($stables);
 list($stable_version, $stable_date) = each($stables);
 ?>
 <div class="elgg-hero">
-	<h1>Introducing a powerful open source social networking engine</h1>
-	<h2>Providing you with the core components needed to build a socially aware web application</h2>
-	<div class="elgg-hero-calls">
-		<?php
-		echo elgg_view('output/url', [
-			'href' => 'about/download',
-			'text' => "Get Elgg $stable_version",
-			'class' => 'elgg-hero-call',
-		]);
+	<div class="elgg-inner">
+		<h1><span>Introducing a powerful open source social networking engine</span></h1>
+		<h2><span>Providing you with the core components needed to build a socially aware web application</span></h2>
+		<div class="elgg-hero-calls">
+			<?php
+			echo elgg_view('output/url', [
+				'href' => 'about/download',
+				'text' => elgg_view_icon('download') . "Get Elgg $stable_version",
+				'class' => 'elgg-hero-call',
+			]);
 
-		echo elgg_view('output/url', [
-			'href' => 'http://learn.elgg.org',
-			'text' => "Learn More",
-			'class' => 'elgg-hero-call',
-			'target' => '_blank',
-		]);
-		?>
+			echo elgg_view('output/url', [
+				'href' => 'http://learn.elgg.org',
+				'text' => elgg_view_icon('info-circle') . "Learn More",
+				'class' => 'elgg-hero-call',
+				'target' => '_blank',
+			]);
+
+			echo elgg_view('output/url', [
+				'href' => 'http://github.com/elgg/elgg',
+				'text' => elgg_view_icon('github') . "Open Source",
+				'class' => 'elgg-hero-call elgg-hero-github',
+				'target' => '_blank',
+			]);
+			?>
+		</div>
 	</div>
-	<?php
-	echo elgg_view('output/url', [
-		'text' => elgg_view('output/img', [
-			'src' => 'https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67',
-			'alt' => 'Fork Elgg on Github',
-		]),
-		'href' => 'https://github.com/elgg/elgg',
-		'class' => 'elgg-hero-github',
-		'target' => '_blank',
-	]);
-	?>
 </div>
 
 <div class="elgg-landing-about">
