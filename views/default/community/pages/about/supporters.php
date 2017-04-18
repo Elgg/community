@@ -128,6 +128,11 @@ $organizations = [
 		'url' => 'http://www.sogln.com/',
 		'username' => 'sogln',
 	],
+	[
+		'organization' => 'MilesWeb Internet Services Pvt Ltd.',
+		'name' => 'Chetan Mahale',
+		'url' => 'https://www.milesweb.com/web-hosting.php'
+	]
 ];
 
 usort($organizations, function($a, $b) {
