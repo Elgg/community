@@ -17,7 +17,7 @@ reset($lts_releases);
 list($lts_version, $lts_date) = each($lts_releases);
 ?>
 <div class="elgg-box elgg-state-notice">
-	The simplest way to install and maintain your Elgg project is via Composer. 
+	The simplest way to install and maintain your Elgg project is via Composer.
 	Please check our <b><a href="http://learn.elgg.org/en/stable/intro/install.html" tartet="_blank">Installation</a></b> docs for instructions.
 </div>
 
@@ -56,7 +56,7 @@ if ($devs) {
 	]);
 }
 
-$content = "<p class=\"elgg-output\">ElggElgg $stable_version (<a href=\"https://github.com/Elgg/Elgg/blob/$stable_version/CHANGELOG.md\">changelog</a>)
+$content = "<p class=\"elgg-output\">Elgg $stable_version (<a href=\"https://github.com/Elgg/Elgg/blob/$stable_version/CHANGELOG.md\">changelog</a>)
 	is the latest and recommended version of Elgg.</p>";
 
 $content = elgg_format_element('div', [
