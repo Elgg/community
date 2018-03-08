@@ -23,6 +23,9 @@ class Releases {
 		'1.10',
 	];
 	static $releases = [
+		'3.0.0-beta.3' => 'March 8, 2018',
+		'3.0.0-beta.2' => 'January 31, 2018',
+		'3.0.0-beta.1' => 'January 29, 2018',
 		'2.3.5' => 'December 6, 2017',
 		'2.3.4' => 'September 21, 2017',
 		'2.3.3' => 'May 16, 2017',
