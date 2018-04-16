@@ -41,7 +41,7 @@ if ($devs) {
 
 	$button = elgg_view('output/url', [
 		'text' => "Download $dev_version",
-		'href' => "getelgg.php?forward=elgg-$dev_version.zip",
+		'href' => "about/getelgg?forward=elgg-{$dev_version}.zip",
 		'class' => 'elgg-button elgg-button-submit',
 	]);
 
@@ -65,7 +65,7 @@ $content = elgg_format_element('div', [
 
 $button = elgg_view('output/url', [
 	'text' => "Download $stable_version",
-	'href' => "getelgg.php?forward=elgg-$stable_version.zip",
+	'href' => "about/getelgg?forward=elgg-{$stable_version}.zip",
 	'class' => 'elgg-button elgg-button-submit',
 		]);
 
@@ -84,9 +84,9 @@ $content = elgg_format_element('div', [
 
 $button = elgg_view('output/url', [
 	'text' => "Download $lts_version",
-	'href' => "getelgg.php?forward=elgg-$lts_version.zip",
+	'href' => "about/getelgg?forward=elgg-{$lts_version}.zip",
 	'class' => 'elgg-button elgg-button-submit',
-		]);
+]);
 
 echo elgg_view_module('info', "LTS Release - $lts_date", $content, [
 	'footer' => $button,
@@ -96,7 +96,7 @@ $release_li = function ($version, $date, $in_git = true) {
 	$links = [];
 
 	$links[] = elgg_view('output/url', [
-		'href' => "getelgg.php?forward=elgg-{$version}.zip",
+		'href' => "about/getelgg?forward=elgg-{$version}.zip",
 		'text' => 'zip',
 	]);
 
@@ -112,7 +112,7 @@ $release_li = function ($version, $date, $in_git = true) {
 
 	return elgg_format_element('li', [
 		'class' => 'elgg-item pam',
-			], "<span><b>$version</b> ($links) - released $date</span>");
+	], "<span><b>$version</b> ($links) - released $date</span>");
 };
 ?>
 

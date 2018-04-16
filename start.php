@@ -357,6 +357,9 @@ elgg_register_event_handler('init', 'system', function() {
 
 	// button for flushing apc cache
 	elgg_register_plugin_hook_handler('register', 'menu:admin_control_panel', function($hook, $type, $menu, $params) {
+		if (!function_exists('apc_clear_cache')) {
+			return;
+		}
 		$options = array(
 			'name' => 'flush_apc',
 			'text' => elgg_echo('apc:flush'),
@@ -367,9 +370,26 @@ elgg_register_event_handler('init', 'system', function() {
 		$menu[] = ElggMenuItem::factory($options);
 		return $menu;
 	});
+	
+	// button for flushing OP cache
+	elgg_register_plugin_hook_handler('register', 'menu:admin_control_panel', function($hook, $type, $menu, $params) {
+		if (!function_exists('opcache_reset')) {
+			return;
+		}
+		$options = array(
+			'name' => 'flush_opcache',
+			'text' => elgg_echo('opcache:flush'),
+			'href' => 'action/admin/flush_opcache',
+			'is_action' => true,
+			'link_class' => 'elgg-button elgg-button-action',
+		);
+		$menu[] = ElggMenuItem::factory($options);
+		return $menu;
+	});
 
 	$actions = __DIR__ . "/actions";
 	elgg_register_action('admin/flush_apc', "$actions/admin/flush_apc.php", 'admin');
+	elgg_register_action('admin/flush_opcache', "$actions/admin/flush_opcache.php", 'admin');
 });
 
 /**
@@ -504,7 +524,7 @@ function community_handle_legacy_pages($hook, $type, $return, $params) {
 
 /**
  * Expand icon menu items to show text
- * 
+ *
  * @param string         $hook   "register"
  * @param string         $type   "menu:entity"
  * @param ElggMenuItem[] $return Menu
