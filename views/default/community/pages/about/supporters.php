@@ -37,6 +37,7 @@ $organizations = [
 		'organization' => 'Mélèze Conseil',
 		'url' => 'http://www.meleze-conseil.com',
 		'username' => 'fabcol',
+		'nofollow' => true,
 	],
 	[
 		'name' => 'Paul Stewart',
@@ -45,20 +46,10 @@ $organizations = [
 		'username' => 'arckinteractive',
 	],
 	[
-		'name' => 'Caroline Meeks',
-		'organization' => 'Solution Grove',
-		'url' => 'http://www.solutiongrove.com/xowiki/elgg',
-	],
-	[
-		'name' => 'Jeroen Dalsem',
-		'organization' => 'ColdTrick IT Solutions',
-		'url' => 'http://www.coldtrick.com',
-		'username' => 'jdalsem',
-	],
-	[
 		'name' => 'Tom Voorneveld',
 		'url' => 'http://www.lorinthe.com',
-		'organization' => Lorinthe,
+		'organization' => 'Lorinthe',
+		'username' => 'tomv',
 	], [
 		'name' => 'Mike Kasper',
 		'url' => 'http://myfreepersonals.com/',
@@ -90,13 +81,14 @@ $organizations = [
 	[
 		'name' => 'Teodor Nica',
 		'organization' => 'VideoWhisper Webcam Software',
-		'url' => '	http://www.videowhisper.com',
+		'url' => 'http://www.videowhisper.com',
 		'username' => 'videowhisper',
+		'nofollow' => true,
 	],
 	[
 		'name' => 'Aron West',
 		'organization' => 'Compassion And Peace Association of Canada (CAPAOC)',
-		'url' => '	http://www.capaoc.org/',
+		'url' => 'http://www.capaoc.org/',
 		'username' => 'aronw9376',
 	],
 	[
@@ -110,17 +102,19 @@ $organizations = [
 		'organization' => 'Human Resource Development International Ltd',
 		'url' => 'http://www.hrdnz.com',
 		'username' => 'stuartrmealor',
+		'nofollow' => true,
 	],
 	[
 		'name' => 'Christophe Lamm',
 		'organization' => 'Ligne Bleue Cyber',
-		'url' => 'http://www.ligne-bleue-cyber.com/services/creation_de_sites_web.html',
+		'url' => 'http://www.ligne-bleue-cyber.com/',
 		'username' => 'clamm',
 	],
 	[
 		'name' => 'Elena Ganenkova',
 		'organization' => 'JetBrains',
 		'url' => 'http://www.jetbrains.com/',
+		'nofollow' => true,
 	],
 	[
 		'name' => 'Christian Bernert',
