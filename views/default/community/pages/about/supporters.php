@@ -195,6 +195,12 @@ $persons = [
 		'url' => 'http://unixpro.us/',
 		'username' => 'gordonwu888',
 	],
+	[
+		'name' => 'Allan Moris',
+		'url' => 'https://www.emucoupon.com/',
+		'username' => '',
+		'nofollow' => true,
+	],
 ];
 
 usort($persons, function($a, $b) {
