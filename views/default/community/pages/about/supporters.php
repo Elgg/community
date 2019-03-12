@@ -151,24 +151,9 @@ $persons = [
 		'username' => 'marcus',
 	],
 	[
-		'name' => 'Mark Bridges',
-		'url' => 'http://www.activityseeker.com/',
-		'username' => 'MisterBridges',
-	],
-	[
 		'name' => 'Per Jensen',
 		'url' => 'http://www.perjensen-online.dk/',
 		'username' => 'gillie',
-	],
-	[
-		'name' => 'Dhrup Chand',
-		'url' => 'http://fkkids.com/',
-		'username' => 'Dhrup2000',
-	],
-	[
-		'name' => 'Torsten Wesolek',
-		'url' => 'http://www.community-software-24.com/',
-		'username' => 'westor',
 	],
 	[
 		'name' => 'Tarun Jangra',
@@ -179,21 +164,19 @@ $persons = [
 		'name' => 'Shyam Somanadh',
 		'url' => 'http://frontiernxt.com/',
 		'username' => 'codelust',
+		'nofollow' => true,
 	],
 	[
 		'name' => 'John L. Spears',
 		'url' => 'http://www.clothingric.com/',
 		'username' => '',
+		'nofollow' => true,
 	],
 	[
 		'name' => 'Xavier Vaucois',
 		'url' => 'http://www.fairbusinessdeal.com/fbd',
 		'username' => '',
-	],
-	[
-		'name' => 'Gordon Wu',
-		'url' => 'http://unixpro.us/',
-		'username' => 'gordonwu888',
+		'nofollow' => true,
 	],
 	[
 		'name' => 'Allan Moris',
