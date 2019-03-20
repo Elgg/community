@@ -37,8 +37,6 @@ function community_init() {
 	elgg_register_plugin_hook_handler('register', 'menu:entity', 'community_setup_entity_menu');
 
 	elgg_extend_view('chosen/chosen.css', 'elements/forms/chosen.css');
-
-	elgg_register_plugin_hook_handler('creating', 'river', 'community_disable_river_events');
 }
 
 /**
@@ -314,6 +312,7 @@ elgg_register_event_handler('init', 'system', function() {
 		switch ($view) {
 			case 'river/relationship/friend/create':
 			case 'river/object/bookmarks/create':
+			case 'river/user/default/profileiconupdate':
 				return false;
 				break;
 		}
@@ -567,27 +566,4 @@ function community_setup_entity_menu($hook, $type, $return, $params) {
 	}
 
 	return $return;
-}
-
-/**
- * Remove certain items from being added to river
- *
- * @param string $hook   "creating"
- * @param string $type   "river"
- * @param mixed  $return Filtered item params
- * @param array  $params Hook params
- *
- * @return mixed
- */
-function community_disable_river_events($hook, $type, $return, $params) {
-
-	$ignored_views = [
-		'river/user/default/profileiconupdate',
-	];
-
-	$view = elgg_extract('view', $params);
-
-	if (in_array($view, $ignored_views)) {
-		return false;
-	}
 }
