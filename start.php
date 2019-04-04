@@ -37,8 +37,6 @@ function community_init() {
 	elgg_register_plugin_hook_handler('register', 'menu:entity', 'community_setup_entity_menu');
 
 	elgg_extend_view('chosen/chosen.css', 'elements/forms/chosen.css');
-
-	elgg_register_plugin_hook_handler('creating', 'river', 'community_disable_river_events');
 }
 
 /**
@@ -236,10 +234,10 @@ function community_pagesetup() {
 	$items = array(
 		'home' => array(elgg_echo('comminity:home'), 'elgg.org'),
 		'community' => array(elgg_echo('comminity:community'), 'elgg.org/activity'),
-		'blog' => array(elgg_echo('comminity:blog'), 'blog.elgg.org'),
+		'blog' => array(elgg_echo('comminity:blog'), 'elgg.org/blog'),
 		'hosting' => array(elgg_echo('comminity:hosting'), 'elgg.org/about/hosting'),
 		'services' => array(elgg_echo('comminity:services'), 'elgg.org/about/services'),
-		'docs' => array(elgg_echo('comminity:learn'), 'learn.elgg.org/'),
+		'docs' => array(elgg_echo('comminity:learn'), 'http://learn.elgg.org/'),
 		'download' => array(elgg_echo('comminity:download'), 'elgg.org/about/download'),
 	);
 
@@ -251,7 +249,7 @@ function community_pagesetup() {
 
 	elgg_register_menu_item('footer', array(
 		'name' => 'policy',
-		'href' => "http://elgg.org/about/domain_policy",
+		'href' => "elgg.org/about/domain_policy",
 		'text' => elgg_echo('comminity:policy'),
 		'section' => 'default',
 	));
@@ -314,6 +312,7 @@ elgg_register_event_handler('init', 'system', function() {
 		switch ($view) {
 			case 'river/relationship/friend/create':
 			case 'river/object/bookmarks/create':
+			case 'river/user/default/profileiconupdate':
 				return false;
 				break;
 		}
@@ -516,9 +515,9 @@ function community_handle_legacy_pages($hook, $type, $return, $params) {
 
 		case 'news' :
 			if ($segments[0] == 'weblog' && $segments[1] == 'rss') {
-				forward('http://news.elgg.org/?view=rss');
+				forward('elgg.org/blog?view=rss');
 			} else {
-				forward('http://news.elgg.org/');
+				forward('elgg.org/blog');
 			}
 			return false;
 	}
@@ -567,27 +566,4 @@ function community_setup_entity_menu($hook, $type, $return, $params) {
 	}
 
 	return $return;
-}
-
-/**
- * Remove certain items from being added to river
- *
- * @param string $hook   "creating"
- * @param string $type   "river"
- * @param mixed  $return Filtered item params
- * @param array  $params Hook params
- *
- * @return mixed
- */
-function community_disable_river_events($hook, $type, $return, $params) {
-
-	$ignored_views = [
-		'river/user/default/profileiconupdate',
-	];
-
-	$view = elgg_extract('view', $params);
-
-	if (in_array($view, $ignored_views)) {
-		return false;
-	}
 }
