@@ -140,30 +140,38 @@ $release_li = function ($version, $date, $in_git = true) {
 		</ul>
 	</div>
 </div>
+<?php
 
-<div class="elgg-module elgg-module-info">
-	<div class="elgg-head">
-		<h3>Security releases</h3>
-	</div>
-	<div class="elgg-body">
-		<?php
-		$branches = Releases::$security_branches;
-		$last_branch = array_pop($branches);
-		?>
-		<p class="elgg-output"><b>Elgg <?= implode(', ', $branches) ?>, and <?= $last_branch ?> are receiving only security updates.</b></p>
-		<ul class="elgg-list">
+$security_branches = Releases::$security_branches;
+if (!empty($security_branches)) {
+?>
+	
+	<div class="elgg-module elgg-module-info">
+		<div class="elgg-head">
+			<h3>Security releases</h3>
+		</div>
+		<div class="elgg-body">
 			<?php
-			foreach (Releases::$security_branches as $branch) {
-				$releases = Releases::getReleases($branch);
-				foreach ($releases as $version => $date) {
-					echo $release_li($version, $date);
-				}
-			}
+			
+			$last_branch = array_pop($security_branches);
 			?>
-		</ul>
+			<p class="elgg-output"><b>Elgg <?= implode(', ', $security_branches) ?>, and <?= $last_branch ?> are receiving only security updates.</b></p>
+			<ul class="elgg-list">
+				<?php
+				foreach ($security_branches as $branch) {
+					$releases = Releases::getReleases($branch);
+					foreach ($releases as $version => $date) {
+						echo $release_li($version, $date);
+					}
+				}
+				?>
+			</ul>
+		</div>
 	</div>
-</div>
+<?php
+}
 
+?>
 <div class="elgg-module elgg-module-info">
 	<div class="elgg-head">
 		<h3>Unsupported releases</h3>

@@ -8,21 +8,19 @@ class Releases {
 	 *             or the releases pages.
 	 */
 
-	// Temporarily setting this to RC, change back to 3.0, when 2.3.0 is released
-	static $dev_branch = '3.0';
+	static $dev_branch = '3.1';
 
-	static $stable_branch = '2.3';
+	static $stable_branch = '3.0';
 
-	static $lts_branch = '1.12';
+	static $lts_branch = '2.3';
 
-	static $security_branches = [
-		'2.2',
-		'2.1',
-		'2.0',
-		'1.11',
-		'1.10',
-	];
+	// Security patches only on LTS
+	static $security_branches = [];
+	
 	static $releases = [
+		'3.0.0' => 'April 4, 2019',
+		'2.3.11' => 'April 4, 2019',
+		'1.12.18' => 'April 3, 2019',
 		'3.0.0-rc.2' => 'December 21, 2018',
 		'2.3.10' => 'December 21, 2018',
 		'3.0.0-rc.1' => 'July 24, 2018',
