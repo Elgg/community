@@ -18,6 +18,7 @@ class Releases {
 	static $security_branches = [];
 	
 	static $releases = [
+		'3.1.5' => 'October 11, 2019',
 		'3.1.4' => 'September 27, 2019',
 		'3.1.3' => 'September 13, 2019',
 		'3.1.2' => 'August 28, 2019',
