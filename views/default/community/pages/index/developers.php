@@ -38,7 +38,7 @@
 						<h3>
 							<?php
 							echo elgg_view('output/url', [
-								'href' => 'http://reference.elgg.org/2.x/annotated.html',
+								'href' => 'http://reference.elgg.org/namespaces.html',
 								'text' => 'API Reference',
 								'target' => '_blank',
 							]);
