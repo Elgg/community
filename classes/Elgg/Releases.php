@@ -8,16 +8,17 @@ class Releases {
 	 *             or the releases pages.
 	 */
 
-	static $dev_branch = '4.0';
+	static $dev_branch = '4.x';
 
-	static $stable_branch = '3.3';
+	static $stable_branch = '4.0';
 
-	static $lts_branch = '2.3';
+	static $lts_branch = '3.3';
 
 	// Security patches only on LTS
 	static $security_branches = [];
 	
 	static $releases = [
+		'4.0.0' => 'September 24, 2021',
 		'4.0.0-rc.1' => 'September 10, 2021',
 		'4.0.0-beta.3' => 'August 6, 2021',
 		'3.3.21' => 'August 3, 2021',
