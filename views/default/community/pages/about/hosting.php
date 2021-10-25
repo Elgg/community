@@ -4,8 +4,8 @@
 
 <ul class="elgg-list">
 	<li class="elgg-item pam clearfix">
-		<h3>A2 Hoting</h3>
-		<a class="float-alt" href="https://partners.a2hosting.com/solutions.php?id=1686&url=443">
+		<h3>A2 Hosting</h3>
+		<a class="float-alt" href="https://www.a2hosting.com/elgg-hosting">
 			<img class="elgg-photo" src="<?=  elgg_get_simplecache_url("images/a2_banner.png") ?>" border="0" alt="A2 Hosting" /></a>
 		<p>300% faster page loads than the competition on SwiftServer SSDs. Features a no-click Elgg install!</p>
 	</li>
@@ -20,7 +20,7 @@
 
 	<li class="elgg-item pam clearfix">
 		<h3>Arvixe</h3>
-		<a class="float-alt" href="http://arvixe.evyy.net/c/303140/196991/3370" target="_blank"><img class="elgg-photo" border="0" src="<?= elgg_get_simplecache_url("images/arvixe.elgg.gif") ?>" width="468" height="60" alt="Arvixe" /></a>
+		<a class="float-alt" href="https://www.arvixe.com/social_network_hosting" target="_blank"><img class="elgg-photo" border="0" src="<?= elgg_get_simplecache_url("images/arvixe.elgg.gif") ?>" width="468" height="60" alt="Arvixe" /></a>
 		<p>For fast, secure and reliable Elgg Hosting, look no further than Arvixe for all your web hosting related needs.</p>
 	</li>
 </ul>
