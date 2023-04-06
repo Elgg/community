@@ -18,6 +18,8 @@ class Releases {
 	static $security_branches = [];
 	
 	static $releases = [
+		'5.0.0-beta.1' => 'April 5, 2023',
+		'4.3.8' => 'April 4, 2023',
 		'4.3.7' => 'February 10, 2023',
 		'4.3.6' => 'January 20, 2023',
 		'4.3.5' => 'December 8, 2022',
