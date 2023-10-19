@@ -35,6 +35,8 @@ function community_init() {
 	elgg_extend_view('page/elements/sidebar', 'community/sidebar/hosting', 920);
 
 	elgg_register_plugin_hook_handler('register', 'menu:entity', 'community_setup_entity_menu');
+	
+	elgg_register_plugin_hook_handler('essential_type_subtypes', 'bulk_user_admin', 'community_essential_type_subtypes');
 
 	elgg_extend_view('chosen/chosen.css', 'elements/forms/chosen.css');
 }
@@ -565,5 +567,46 @@ function community_setup_entity_menu($hook, $type, $return, $params) {
 		$return[$key] = $item;
 	}
 
+	return $return;
+}
+
+/**
+ * Add default non-searchable entity types to the list of essential types
+ *
+ * @param string $hook   'essential_type_subtypes'
+ * @param string $type   'bulk_user_admin'
+ * @param array  $return current return value
+ * @param array  $params supplied params
+ *
+ * @return array
+ */
+function community_essential_type_subtypes($hook, $type, $return, $params) {
+	if (!isset($return['object'])) {
+		$return['object'] = [];
+	}
+	
+	// just in case
+	$return['object'][] = 'plugin';
+	
+	if (elgg_is_active_plugin('community_plugins')) {
+		$return['object'][] = 'plugin_release';
+	}
+	
+	if (elgg_is_active_plugin('discussions')) {
+		$return['object'][] = 'discussion_reply';
+	}
+	
+	if (elgg_is_active_plugin('messages')) {
+		$return['object'][] = 'messages';
+	}
+	
+	if (elgg_is_active_plugin('pages')) {
+		$return['object'][] = 'plugin_release';
+	}
+	
+	if (elgg_is_active_plugin('showcase')) {
+		$return['object'][] = 'showcaseimg';
+	}
+	
 	return $return;
 }
