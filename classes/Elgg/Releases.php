@@ -10,7 +10,7 @@ class Releases {
 
 	static $dev_branch = '6.0';
 
-	static $stable_branch = '5.0';
+	static $stable_branch = '5.1';
 
 	static $lts_branch = '4.3';
 
