@@ -8,9 +8,9 @@ class Releases {
 	 *             or the releases pages.
 	 */
 
-	static $dev_branch = '6.1';
+	static $dev_branch = '6.2';
 
-	static $stable_branch = '6.0';
+	static $stable_branch = '6.1';
 
 	static $lts_branch = '5.1';
 
@@ -18,6 +18,9 @@ class Releases {
 	static $security_branches = [];
 	
 	static $releases = [
+		'6.1.0' => 'November 21, 2024',
+		'6.0.7' => 'November 20, 2024',
+		'5.1.12' => 'November 20, 2024',
 		'6.0.6' => 'October 25, 2024',
 		'5.1.11' => 'October 25, 2024',
 		'6.0.5' => 'October 9, 2024',
