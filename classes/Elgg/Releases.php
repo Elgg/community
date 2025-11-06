@@ -18,6 +18,7 @@ class Releases {
 	static $security_branches = [];
 	
 	static $releases = [
+		'6.3.2' => 'November 6, 2025',
 		'6.3.1' => 'October 3, 2025',
 		'6.3.0' => 'September 2, 2025',
 		'6.2.6' => 'September 2, 2025',
